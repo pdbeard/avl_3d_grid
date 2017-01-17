@@ -1,112 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Filterable Portfolio with Bootstrap and Shuffle.js</title>
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>AVL Sort</title>
 
-    <link href="css/custom.css" rel="stylesheet">
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/custom.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body>
+</head>
 
-    <h1 class="text-center">Filterable portfolio with Bootstrap 3 and Shuffle.js</h1>
+<body>
 
-    <section class="portfolio">
-      <div class="container">
-        <div class="row">
 
-          <ul class="portfolio-sorting list-inline text-center">
+
+  <section class="portfolio" id="grid3d">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-2 portfolio_area">
+          <h1 class="main_category_titles">Location</h1>
+          <ul class="portfolio-sorting">
+
+
             <li><a href="#" data-group="all" class="active">All</a></li>
             <li><a href="#" data-group="people">People</a></li>
-            <li><a href="#" data-group="simpsons">Simpsons</a></li>
+          </ul>
+          <h1 class="main_category_titles">Material</h1>
+          <ul class="portfolio-sorting">
+
             <li><a href="#" data-group="futurama">Futurama</a></li>
-          </ul> <!--end portfolio sorting -->
+            <li><a href="#" data-group="simpsons">Simpsons</a></li>
+
+          </ul>
+          <!--end portfolio sorting -->
+
+        </div>
+
+        <div class="col-sm-10 grid_wrap">
+          <h1 class="text-center">AVL Sort</h1>
+
+
 
           <ul class="portfolio-items list-unstyled" id="grid">
+            <li class="col-md-4 col-sm-4 col-xs-6 portfolio-item" data-groups='["people"]'>
 
-            <li class="col-md-4 col-sm-4 col-xs-6" data-groups='["people"]'>
-              <figure class="portfolio-item">
+              <figure>
                 <a href="#">
-                  <img src="http://lorempixel.com/700/400/people/1" alt="Item 1" class="img-responsive">
+                  <img src="img/1.jpg" alt="Item 1" class="img-responsive">
                 </a>
               </figure>
             </li>
 
-            <li class="col-md-4 col-sm-4 col-xs-6" data-groups='["people"]'>
-                <figure class="portfolio-item">
-                    <a href="#">
-                        <img src="http://lorempixel.com/700/400/people/7" alt="" class="img-responsive">
-                    </a>
-                </figure>
-            </li>
+            <li class="col-md-4 col-sm-4 col-xs-6 portfolio-item" data-groups='["people"]'>
 
-           <li class="col-md-4 col-sm-4 col-xs-6" data-groups='["futurama"]'>
-              <figure class="portfolio-item">
-                  <a href="#">
-                      <img src="http://lorempicsum.com/futurama/700/400/1" alt="" class="img-responsive">
-                  </a>
+              <figure>
+                <a href="#">
+                  <img src="img/2.jpg" alt="" class="img-responsive">
+                </a>
+
               </figure>
             </li>
 
-            <li class="col-md-4 col-sm-4 col-xs-6" data-groups='["futurama"]'>
-              <figure class="portfolio-item">
-                  <a href="#">
-                      <img src="http://lorempicsum.com/futurama/700/400/2" alt="" class="img-responsive">
-                  </a>
+            <li class="col-md-4 col-sm-4 col-xs-6 portfolio-item" data-groups='["futurama"]'>
+
+
+              <figure>
+                <a href="#">
+                  <img src="img/3.jpg" alt="" class="img-responsive">
+                </a>
               </figure>
             </li>
 
-            <li class="col-md-4 col-sm-4 col-xs-6" data-groups='["simpsons", "people"]'>
-              <figure class="portfolio-item">
-                  <a href="#">
-                      <img src="http://lorempicsum.com/simpsons/700/400/1" alt="" class="img-responsive">
-                  </a>
+            <li class="col-md-4 col-sm-4 col-xs-6 portfolio-item" data-groups='["futurama"]'>
+
+
+              <figure>
+                <a href="#">
+                  <img src="img/4.jpg" alt="" class="img-responsive">
+                </a>
               </figure>
             </li>
 
-            <li class="col-md-4 col-sm-4 col-xs-6" data-groups='["simpsons"]'>
-              <figure class="portfolio-item">
-                  <a href="#">
-                      <img src="http://lorempicsum.com/simpsons/700/400/3" alt="" class="img-responsive">
-                  </a>
+            <li class="col-md-4 col-sm-4 col-xs-6 portfolio-item" data-groups='["simpsons", "people"]'>
+
+
+              <figure>
+                <a href="#">
+                  <img src="img/5.jpg" alt="" class="img-responsive">
+                </a>
               </figure>
             </li>
 
-            <li class="col-md-4 col-sm-4 col-xs-6" data-groups='["people"]'>
-                <figure class="portfolio-item">
-                    <a href="#">
-                        <img src="http://lorempixel.com/700/400/people/9" alt="" class="img-responsive">
-                    </a>
-                </figure>
-            </li>
+            <li class="col-md-4 col-sm-4 col-xs-6 portfolio-item" data-groups='["simpsons"]'>
 
-             <li class="col-md-4 col-sm-4 col-xs-6" data-groups='["simpsons"]'>
-              <figure class="portfolio-item">
-                  <a href="#">
-                      <img src="http://lorempicsum.com/simpsons/700/400/4" alt="" class="img-responsive">
-                  </a>
+              <figure>
+                <a href="#">
+                  <img src="img/6.jpg" alt="" class="img-responsive">
+                </a>
               </figure>
             </li>
 
-            <li class="col-md-4 col-sm-4 col-xs-6" data-groups='["futurama"]'>
-              <figure class="portfolio-item">
-                  <a href="#">
-                      <img src="http://lorempicsum.com/futurama/700/400/5" alt="" class="img-responsive">
-                  </a>
+            <li class="col-md-4 col-sm-4 col-xs-6 portfolio-item" data-groups='["people"]'>
+
+
+              <figure>
+                <a href="#">
+                  <img src="img/7.jpg" alt="" class="img-responsive">
+                </a>
+              </figure>
+            </li>
+
+            <li class="col-md-4 col-sm-4 col-xs-6 portfolio-item" data-groups='["simpsons"]'>
+
+
+              <figure>
+                <a href="#">
+                  <img src="img/8.jpg" alt="" class="img-responsive">
+                </a>
+              </figure>
+            </li>
+
+            <li class="col-md-4 col-sm-4 col-xs-6 portfolio-item" data-groups='["futurama"]'>
+
+              <figure>
+                <a href="#">
+                  <img src="img/9.jpg" alt="" class="img-responsive">
+                </a>
               </figure>
             </li>
 
@@ -114,18 +146,88 @@
             <!-- sizer -->
             <li class="col-md-4 col-sm-4 col-xs-6 shuffle_sizer"></li>
 
-            
-          </ul> <!--end portfolio grid -->
+
+          </ul>
 
 
-          </div> <!--end row -->
-        </div> <!-- end container-->
-    </section>
+          <div class="content">
+            <div>
+              <div class="desc-img">
+                <img src="img/1.jpg" alt="Item 1" class="img-responsive">
+              </div>
+              <p class="desc-title">PEOPLE 1</p>
+              <p class="desc-text">The only people for me are the mad ones, the ones who are mad to live, mad to talk, mad to be saved, desirous of everything at the same time, the ones who never yawn or say a commonplace thing, but burn, burn, burn like fabulous yellow roman candles exploding like spiders across the stars.</p>
+            </div>
+            <div>
+              <div class="desc-img"> <img src="img/2.jpg" alt="Item 1" class="img-responsive"></div>
+              <p class="desc-title">PEOPLE 1</p>
+              <p class="desc-text">The only people for me are the mad ones, the ones who are mad to live, mad to talk, mad to be saved, desirous of everything at the same time, the ones who never yawn or say a commonplace thing, but burn, burn, burn like fabulous yellow roman candles exploding like spiders across the stars.</p>
+              <p class="desc-text">The only people for me are the mad ones, the ones who are mad to live, mad to talk, mad to be saved, desirous of everything at the same time, the ones who never yawn or say a commonplace thing, but burn, burn, burn like fabulous yellow roman candles exploding like spiders across the stars.</p>
+            </div>
+            <div>
+              <div class="desc-img"> <img src="img/3.jpg" alt="Item 1" class="img-responsive"></div>
+              <p class="desc-title">PEOPLE 1</p>
+              <p class="desc-text">The only people for me are the mad ones, the ones who are mad to live, mad to talk, mad to be saved, desirous of everything at the same time, the ones who never yawn or say a commonplace thing, but burn, burn, burn like fabulous yellow roman candles exploding like spiders across the stars.</p>
+              <p class="desc-text">The only people for me are the mad ones, the ones who are mad to live, mad to talk, mad to be saved, desirous of everything at the same time, the ones who never yawn or say a commonplace thing, but burn, burn, burn like fabulous yellow roman candles exploding like spiders across the stars.</p>
+            </div>
+            <div>
+              <div class="desc-img"> <img src="img/4.jpg" alt="Item 1" class="img-responsive"></div>
+              <p class="desc-title">PEOPLE 1</p>
+              <p class="desc-text">The only people for me are the mad ones, the ones who are mad to live, mad to talk, mad to be saved, desirous of everything at the same time, the ones who never yawn or say a commonplace thing, but burn, burn, burn like fabulous yellow roman candles exploding like spiders across the stars.</p>
+              <p class="desc-text">The only people for me are the mad ones, the ones who are mad to live, mad to talk, mad to be saved, desirous of everything at the same time, the ones who never yawn or say a commonplace thing, but burn, burn, burn like fabulous yellow roman candles exploding like spiders across the stars.</p>
+            </div>
+            <div>
+              <div class="desc-img"> <img src="img/5.jpg" alt="Item 1" class="img-responsive"></div>
+              <p class="desc-title">PEOPLE 1</p>
+              <p class="desc-text">The only people for me are the mad ones, the ones who are mad to live, mad to talk, mad to be saved, desirous of everything at the same time, the ones who never yawn or say a commonplace thing, but burn, burn, burn like fabulous yellow roman candles exploding like spiders across the stars.</p>
+              <p class="desc-text">The only people for me are the mad ones, the ones who are mad to live, mad to talk, mad to be saved, desirous of everything at the same time, the ones who never yawn or say a commonplace thing, but burn, burn, burn like fabulous yellow roman candles exploding like spiders across the stars.</p>
+            </div>
+            <div>
+              <div class="desc-img"> <img src="img/6.jpg" alt="Item 1" class="img-responsive"></div>
+              <p class="desc-title">PEOPLE 1</p>
+              <p class="desc-text">The only people for me are the mad ones, the ones who are mad to live, mad to talk, mad to be saved, desirous of everything at the same time, the ones who never yawn or say a commonplace thing, but burn, burn, burn like fabulous yellow roman candles exploding like spiders across the stars.</p>
+              <p class="desc-text">The only people for me are the mad ones, the ones who are mad to live, mad to talk, mad to be saved, desirous of everything at the same time, the ones who never yawn or say a commonplace thing, but burn, burn, burn like fabulous yellow roman candles exploding like spiders across the stars.</p>
+            </div>
+            <div>
+              <div class="desc-img"> <img src="img/7.jpg" alt="Item 1" class="img-responsive"></div>
+              <p class="desc-title">PEOPLE 1</p>
+              <p class="desc-text">The only people for me are the mad ones, the ones who are mad to live, mad to talk, mad to be saved, desirous of everything at the same time, the ones who never yawn or say a commonplace thing, but burn, burn, burn like fabulous yellow roman candles exploding like spiders across the stars.</p>
+              <p class="desc-text">The only people for me are the mad ones, the ones who are mad to live, mad to talk, mad to be saved, desirous of everything at the same time, the ones who never yawn or say a commonplace thing, but burn, burn, burn like fabulous yellow roman candles exploding like spiders across the stars.</p>
+            </div>
+            <div>
+              <div class="desc-img"> <img src="img/8.jpg" alt="Item 1" class="img-responsive"></div>
+              <p class="desc-title">PEOPLE 1</p>
+              <p class="desc-text">The only people for me are the mad ones, the ones who are mad to live, mad to talk, mad to be saved, desirous of everything at the same time, the ones who never yawn or say a commonplace thing, but burn, burn, burn like fabulous yellow roman candles exploding like spiders across the stars.</p>
+              <p class="desc-text">The only people for me are the mad ones, the ones who are mad to live, mad to talk, mad to be saved, desirous of everything at the same time, the ones who never yawn or say a commonplace thing, but burn, burn, burn like fabulous yellow roman candles exploding like spiders across the stars.</p>
+            </div>
+            <div>
+              <div class="desc-img"> <img src="img/9.jpg" alt="Item 1" class="img-responsive"></div>
+              <p class="desc-title">PEOPLE 1</p>
+              <p class="desc-text">The only people for me are the mad ones, the ones who are mad to live, mad to talk, mad to be saved, desirous of everything at the same time, the ones who never yawn or say a commonplace thing, but burn, burn, burn like fabulous yellow roman candles exploding like spiders across the stars.</p>
+              <p class="desc-text">The only people for me are the mad ones, the ones who are mad to live, mad to talk, mad to be saved, desirous of everything at the same time, the ones who never yawn or say a commonplace thing, but burn, burn, burn like fabulous yellow roman candles exploding like spiders across the stars.</p>
+            </div>
+            <span class="loading"></span>
+            <span class="icon close-content"></span>
+          </div>
+          <!--end portfolio grid -->
 
+        </div>
+        <!--end col -->
+      </div>
+      <!--end row -->
+    </div>
+    <!-- end container-->
+  </section>
+
+
+
+
+
+  <!--
     <footer>
       <div class="container">
-        <div class="row">   
-          
+        <div class="row">
+
           <div class="col-md-4 column">
             <h4>AcasA Programming</h4>
             <p>A tutorial by <a href="http://acasaprogramming.ro">AcasA Programming</a></p>
@@ -134,7 +236,7 @@
               <li><a href="https://www.facebook.com/acasaprogramming" class="facebook"><span class="fa fa fa-facebook"></span></a></li>
               <li><a href="https://github.com/acasaprogramming" class="github"><span class="fa fa-github"></span></a></li>
             </ul>
-            
+
           </div>
 
 
@@ -155,17 +257,25 @@
             </ul>
           </div>
 
-        </div> <!--end row -->
-      </div> <!-- end container-->
+        </div>
+      </div>
     </footer>
+-->
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
 
 
-    <script src="js/jquery.shuffle.min.js"></script>
-    <script src="js/custom.js"></script>
-  </body>
+  <script src="js/jquery.shuffle.min.js"></script>
+  <script src="js/custom.js"></script>
+  <script src="js/classie.js"></script>
+  <script src="js/helper.js"></script>
+  <script src="js/grid3d.js"></script>
+  <script>
+    new grid3D(document.getElementById('grid3d'));
+  </script>
+</body>
+
 </html>
