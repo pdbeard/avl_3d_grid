@@ -30,12 +30,24 @@ body
 .portfolio
 {
 }
-.portfolio_area{
+
+.sidebar_area{
   border-right: 5px solid #2980b9;
   background-color: #34495e;
 /*  display:block;*/
   padding:0px;
   height:100vh;
+  width:16%;
+  position:fixed;
+/*  font-size: 16px;*/
+}
+.sidebar_space{
+/*  border-right: 5px solid #2980b9;*/
+/*  background-color: #34495e;*/
+/*  display:block;*/
+  padding:0px;
+  height:100vh;
+  position:relative;
 /*  font-size: 16px;*/
 }
 .portfolio-sorting
@@ -71,15 +83,120 @@ body
   color: #bd888a;
 }
 
-.portfolio-item
-{
-  margin-bottom: 30px;
-}
+
 
 .shadow{
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      background-color:white;
+      padding:5px;
 }
 
+
+.grid_wrap {
+/*
+  margin: 10px auto 0;
+  max-width: 1090px;
+  width: 100%;
+  padding: 0;
+*/
+  -webkit-perspective: 1500px;
+  perspective: 1500px;
+}
+
+.portfolio-item
+{
+  margin-bottom: 30px;
+  margin-top:30px;
+
+}
+
+
+.portfolio-items
+{
+  -webkit-transition: all 0.5s cubic-bezier(0,0,0.25,1);
+  transition: all 0.5s cubic-bezier(0,0,0.25,1);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+
+.view-full .portfolio-items {
+  -webkit-transform: translateZ(-1500px);
+  transform: translateZ(-1500px);
+}
+
+.portfolio-items figure,
+.portfolio-items .placeholder {
+/*
+  width: 340px;
+  height: 300px;
+*/
+}
+
+.portfolio-items figure {
+/*  margin: 10px;*/
+  display: inline-block;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.portfolio-items figure.active {
+  opacity: 0;
+}
+
+.portfolio-items .placeholder {
+  pointer-events: none;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.placeholder > div {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.placeholder .front img {
+  width: 100%;
+  height: 100%;
+}
+
+.placeholder .back {
+  background: white;
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.view-full .placeholder {
+  -webkit-transition: all 0.5s 0.1s cubic-bezier(0,0,0.25,1);
+  transition: all 0.5s 0.1s cubic-bezier(0,0,0.25,1);
+}
+
+.vertical .view-full .placeholder {
+  -webkit-transform: translateZ(1500px) rotateX(-179.9deg);
+  transform: translateZ(1500px) rotateX(-179.9deg); /* FF, Chrome, can we agree on one direction, pleeease? */
+}
+
+.horizontal .view-full .placeholder {
+  -webkit-transform: translateZ(1500px) rotateY(-179.9deg);
+  transform: translateZ(1500px) rotateY(-179.9deg);
+}
+
+.portfolio-items figure img {
+  display: block;
+  width: 100%;
+}
 
 
 
@@ -113,8 +230,8 @@ Content Loading
   background: transparent url(../img/preloader.gif) no-repeat center center;
   -webkit-transform: scale(0.5);
   transform: scale(0.5);
-  -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
-  transition: opacity 0.5s, transform 0.5s;
+  -webkit-transition: all 0.5s, -webkit-transform 0.5s;
+  transition: all 0.5s, transform 0.5s;
 }
 
 .loading.show {
@@ -124,18 +241,18 @@ Content Loading
 }
 
 .content.show {
-  height: auto;
+  height: 100vh;
   pointer-events: auto;
   visibility: visible;
 }
 
 .content > div {
   z-index: 10;
-  position: absolute;
+  position:absolute;
   top: 0;
   width: 100%;
   overflow: hidden;
-  height: 0;
+  height: 100vh;
   opacity: 0;
   background: #fff;
 }
@@ -312,7 +429,6 @@ p.desc-text:nth-child(3) {
 footer
 {
   border-top: 5px solid #2980b9;
-
   background-color: #34495e;
   padding: 24px;
   font-size: 16px;

@@ -27,20 +27,25 @@
     this.gridWrap = this.el.querySelector( 'div.grid_wrap' );
     // grid element
     this.grid = this.gridWrap.querySelector( 'ul.portfolio-items' );
-    console.log(this.grid);
+      console.log(this.grid);
     // main grid items
     this.gridItems = [].slice.call( this.grid.children );
+      console.log(this.gridItems);
     // default sizes for grid items
     this.itemSize = { width : this.gridItems[0].offsetWidth, height : this.gridItems[0].offsetHeight };
     // content
+      console.log(this.gridItems[0].children[1]);
     this.contentEl = this.el.querySelector( 'div.content' );
-    console.log(this.contentEl);
+//    console.log(this.contentEl);
     // content items
     this.contentItems = [].slice.call( this.contentEl.children );
+//    console.log(this.contentItems);
     // close content cross
     this.close = this.contentEl.querySelector( 'span.close-content' );
     // closes content on resort
-//    this.resort = this.contentEl.querySelctor('li.resort');
+    this.resort = this.el.querySelectorAll('li.resort');
+//    this.all_close = [].slice.call(this.resort.children);
+    console.log(this.resort);
     // loading indicator
     this.loader = this.contentEl.querySelector( 'span.loading' );
     // support: support for pointer events, transitions and 3d transforms
@@ -56,6 +61,12 @@
     this.gridItems.forEach( function( item, idx ) {
       item.addEventListener( 'click', function() {
         self._showContent( idx );
+      } );
+    } );
+
+    this.resort.forEach( function( item, idx ) {
+      item.addEventListener( 'click', function() {
+        self._hideContent(  );
       } );
     } );
 
@@ -102,7 +113,11 @@
           // hide loader
           classie.removeClass( self.loader, 'show' );
           // in the end of the transition set class "show" to respective content item
+//          classie.addClass( self.gridItems[pos].chirdren[1], 'show' );
           classie.addClass( self.contentItems[ pos ], 'show' );
+
+          this.gridItems[0].children[1]
+
         }, 1000 );
         // show content area
         classie.addClass( self.contentEl, 'show' );
