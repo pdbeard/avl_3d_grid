@@ -50,6 +50,7 @@
     this.loader = this.contentEl.querySelector( 'span.loading' );
     // support: support for pointer events, transitions and 3d transforms
     this.support = support.pointerevents && support.csstransitions && support.csstransforms3d;
+    this.select_body = document.getElementsByTagName("BODY")[0];
     // init events
     this._initEvents();
   };
@@ -116,15 +117,21 @@
 //          classie.addClass( self.gridItems[pos].chirdren[1], 'show' );
           classie.addClass( self.contentItems[ pos ], 'show' );
 
-          this.gridItems[0].children[1]
+//          this.gridItems[0].children[1]
 
-        }, 1000 );
+        }, 500 );
         // show content area
         classie.addClass( self.contentEl, 'show' );
         // show loader
-        classie.addClass( self.loader, 'show' );
+//        classie.addClass( self.loader, 'show' );
         classie.addClass( document.body, 'noscroll' );
         self.isAnimating = false;
+
+        // hide grid items
+        self.gridItems.forEach( function( item, idx ) {
+          classie.addClass(self.gridItems[idx],'blur');
+        } );
+
       };
 
     // if no support just load the content (simple fallback - no animation at all)
@@ -172,6 +179,11 @@
 
     classie.removeClass( contentItem, 'show' );
     classie.removeClass( this.contentEl, 'show' );
+    // add grid items
+        self.gridItems.forEach( function( item, idx ) {
+          classie.removeClass(self.gridItems[idx],'blur');
+        } );
+
     // without the timeout there seems to be some problem in firefox
     setTimeout( function() { classie.removeClass( document.body, 'noscroll' ); }, 25 );
     // that's it for no support..

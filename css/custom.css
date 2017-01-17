@@ -1,10 +1,7 @@
 @font-face {
   font-family: 'fontawesome';
-  src:url('../fonts/fontawesome/fontawesome.eot?-v92fkb');
-  src:url('../fonts/fontawesome/fontawesome.eot?#iefix-v92fkb') format('embedded-opentype'),
-    url('../fonts/fontawesome/fontawesome.woff?-v92fkb') format('woff'),
-    url('../fonts/fontawesome/fontawesome.ttf?-v92fkb') format('truetype'),
-    url('../fonts/fontawesome/fontawesome.svg?-v92fkb#fontawesome') format('svg');
+  src: url('../fonts/fontawesome/fontawesome.eot?-v92fkb');
+  src: url('../fonts/fontawesome/fontawesome.eot?#iefix-v92fkb') format('embedded-opentype'), url('../fonts/fontawesome/fontawesome.woff?-v92fkb') format('woff'), url('../fonts/fontawesome/fontawesome.ttf?-v92fkb') format('truetype'), url('../fonts/fontawesome/fontawesome.svg?-v92fkb#fontawesome') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -14,86 +11,75 @@
   font-weight: normal;
   font-style: normal;
   font-family: 'codropsicons';
-  src:url('../fonts/codropsicons/codropsicons.eot');
-  src:url('../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/codropsicons/codropsicons.woff') format('woff'),
-    url('../fonts/codropsicons/codropsicons.ttf') format('truetype'),
-    url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
+  src: url('../fonts/codropsicons/codropsicons.eot');
+  src: url('../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'), url('../fonts/codropsicons/codropsicons.woff') format('woff'), url('../fonts/codropsicons/codropsicons.ttf') format('truetype'), url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
 }
 
-body
-{
-  background-color: #f1f5f8;
-  height:100vh;
+body {
+  /*  background-color: #f1f5f8;*/
+  background-color: #dddad6;
+  height: 100vh;
 }
 
-.portfolio
-{
+.portfolio {
+/*  overflow:hidden;*/
 }
 
-.sidebar_area{
-  border-right: 5px solid #2980b9;
-  background-color: #34495e;
-/*  display:block;*/
-  padding:0px;
-  height:100vh;
-  width:16%;
-  position:fixed;
-/*  font-size: 16px;*/
+.sidebar_area {
+  border-right: 5px solid #006298;
+  background-color: #01426A;
+  padding: 0px;
+  height: 100vh;
+  width: 16%;
+  position: fixed;
+  -webkit-box-shadow: 5px 0px 5px -2px rgba(0, 0, 0, 0.20);
+  -moz-box-shadow: 5px 0px 5px -2px rgba(0, 0, 0, 0.20);
+  box-shadow: 5px 0px 5px -2px rgba(0, 0, 0, 0.20);
 }
-.sidebar_space{
-/*  border-right: 5px solid #2980b9;*/
-/*  background-color: #34495e;*/
-/*  display:block;*/
-  padding:0px;
-  height:100vh;
-  position:relative;
-/*  font-size: 16px;*/
+
+.sidebar_space {
+  padding: 0px;
+  height: 100vh;
+  position: relative
 }
-.portfolio-sorting
-{
-  position:relative;
+
+.portfolio-sorting {
+  position: relative;
   text-transform: uppercase;
   font-size: 16px;
-  padding:0px;
+  padding: 0px;
   list-style: none;
 }
-.main_category_titles{
-  color:white;
-  margin:10px;
-  padding:0px;
-}
 
-.portfolio-sorting li a
-{
-  display:block;
+.main_category_titles {
   color: white;
-  background-color:#507091;
+  margin: 10px;
+  padding: 0px;
+}
+
+.portfolio-sorting li a {
+  display: block;
+  color: white;
+  background-color: #006298;
   text-decoration: none;
-  padding:10px;
-  margin-bottom:1px;
-
-  border-bottom: 2px solid #b9c9d8;
-/*  width:100%;*/
-/*  left:0px;*/
-}
-.portfolio-sorting li a:hover,
-.portfolio-sorting li a.active
-{
-  color: #bd888a;
+  padding: 10px;
+  margin-bottom: 1px;
+  border-bottom: 2px solid #01426A;
 }
 
-
-
-.shadow{
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      background-color:white;
-      padding:5px;
+.portfolio-sorting li a.active {
+  color: #F1BE48;
+  border-left: 5px solid #F1BE48;
 }
 
+.shadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: white;
+  padding: 5px;
+}
 
 .grid_wrap {
-/*
+  /*
   margin: 10px auto 0;
   max-width: 1090px;
   width: 100%;
@@ -103,22 +89,17 @@ body
   perspective: 1500px;
 }
 
-.portfolio-item
-{
+.portfolio-item {
   margin-bottom: 30px;
-  margin-top:30px;
-
+  margin-top: 30px;
 }
 
-
-.portfolio-items
-{
-  -webkit-transition: all 0.5s cubic-bezier(0,0,0.25,1);
-  transition: all 0.5s cubic-bezier(0,0,0.25,1);
+.portfolio-items {
+  -webkit-transition: all 0.5s cubic-bezier(0, 0, 0.25, 1);
+  transition: all 0.5s cubic-bezier(0, 0, 0.25, 1);
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
-
 
 .view-full .portfolio-items {
   -webkit-transform: translateZ(-1500px);
@@ -127,14 +108,14 @@ body
 
 .portfolio-items figure,
 .portfolio-items .placeholder {
-/*
+  /*
   width: 340px;
   height: 300px;
 */
 }
 
 .portfolio-items figure {
-/*  margin: 10px;*/
+  /*  margin: 10px;*/
   display: inline-block;
   cursor: pointer;
   -webkit-touch-callout: none;
@@ -179,13 +160,14 @@ body
 }
 
 .view-full .placeholder {
-  -webkit-transition: all 0.5s 0.1s cubic-bezier(0,0,0.25,1);
-  transition: all 0.5s 0.1s cubic-bezier(0,0,0.25,1);
+  -webkit-transition: all 0.5s 0.1s cubic-bezier(0, 0, 0.25, 1);
+  transition: all 0.5s 0.1s cubic-bezier(0, 0, 0.25, 1);
 }
 
 .vertical .view-full .placeholder {
   -webkit-transform: translateZ(1500px) rotateX(-179.9deg);
-  transform: translateZ(1500px) rotateX(-179.9deg); /* FF, Chrome, can we agree on one direction, pleeease? */
+  transform: translateZ(1500px) rotateX(-179.9deg);
+  /* FF, Chrome, can we agree on one direction, pleeease? */
 }
 
 .horizontal .view-full .placeholder {
@@ -199,11 +181,9 @@ body
 }
 
 
-
 /**************
 Content Loading
 ***************/
-
 
 .content,
 .loading {
@@ -212,17 +192,23 @@ Content Loading
   left: 0;
   right: 0;
   bottom: 0;
-  pointer-events: none; /* Careful, does not work in IE < 11 http://caniuse.com/#search=pointer-events */
+  pointer-events: none;
+  /* Careful, does not work in IE < 11 http://caniuse.com/#search=pointer-events */
 }
 
 .content {
   overflow-y: scroll;
-  height: 0; /* What seems to be the problem, officer? Well, we have a second scroll bar in Chrome! */
+  height: 0;
+  /* What seems to be the problem, officer? Well, we have a second scroll bar in Chrome! */
   background: #fff;
   visibility: hidden;
-  z-index: 400;
+  z-index: 300;
   -webkit-overflow-scrolling: touch;
+  background: rgba(100%, 100%, 100%, .5);
+  -webkit-transition: all 0.5s, -webkit-transform 0.5s;
+  transition: all 0.5s, transform 0.5s;
 }
+/*
 
 .loading {
   opacity: 0;
@@ -238,27 +224,52 @@ Content Loading
   opacity: 1;
   -webkit-transform: scale(1);
   transform: scale(1);
+  -webkit-transition: all 0.5s, -webkit-transform 0.5s;
+  transition: all 0.5s, transform 0.5s;
+}
+*/
+
+.blur {
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+  filter: blur(10px);
+  -webkit-transition: all 0.5s cubic-bezier(0, 0, 0.25, 1);
+  transition: all 0.5s cubic-bezier(0, 0, 0.25, 1);
+}
+
+.noscroll{
+  overflow:hidden;
 }
 
 .content.show {
   height: 100vh;
   pointer-events: auto;
   visibility: visible;
+  -webkit-transition: all 0.5s, -webkit-transform 0.5s;
+  transition: all 0.5s, transform 0.5s;
 }
 
 .content > div {
-  z-index: 10;
-  position:absolute;
-  top: 0;
-  width: 100%;
-  overflow: hidden;
-  height: 100vh;
+  z-index: 400;
+  position: absolute;
   opacity: 0;
+  width: 50vw;
+  overflow:auto;
   background: #fff;
+  top: 20vh;
+  bottom:100vh;
+  left: 15vw;
+  -webkit-transition: all 0.5s, -webkit-transform 0.5s;
+  transition: all 0.5s, transform 0.5s;
+  -webkit-box-shadow: 0px 0px 38px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 38px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 38px 1px rgba(0, 0, 0, 0.75);
 }
 
 .content > div.show {
-  height: auto;
+  height: 50vh;
   opacity: 1;
   -webkit-transition: opacity 0.6s;
   transition: opacity 0.6s;
@@ -275,9 +286,9 @@ Content Loading
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-li.resort{
 
-}
+li.resort {}
+
 span.close-content {
   position: fixed;
   z-index: 1000;
@@ -306,11 +317,12 @@ span.close-content {
   content: "\e602";
 }
 
+
 /* desc content */
 
 .desc-img,
 .desc-text,
-.desc-title{
+.desc-title {
   max-width: 600px;
   width: 90%;
   opacity: 0;
@@ -320,34 +332,34 @@ span.close-content {
 
 .vertical .desc-img,
 .vertical .desc-text,
-.vertical .desc-title{
+.vertical .desc-title {
   -webkit-transform: translateY(100px);
   transform: translateY(100px);
 }
 
 .horizontal .desc-img,
 .horizontal .desc-text,
-.horizontal .desc-title{
+.horizontal .desc-title {
   -webkit-transform: translateX(-100px);
   transform: translateX(-100px);
 }
 
 .content > div.show .desc-img,
 .content > div.show .desc-text,
-.content > div.show .desc-title{
+.content > div.show .desc-title {
   opacity: 1;
 }
 
 .vertical .content > div.show .desc-img,
 .vertical .content > div.show .desc-text,
-.vertical .content > div.show .desc-title{
+.vertical .content > div.show .desc-title {
   -webkit-transform: translateY(0);
   transform: translateY(0);
 }
 
 .horizontal .content > div.show .desc-img,
 .horizontal .content > div.show .desc-text,
-.horizontal .content > div.show .desc-title{
+.horizontal .content > div.show .desc-title {
   -webkit-transform: translateX(0);
   transform: translateX(0);
 }
@@ -363,18 +375,26 @@ p.desc-text:nth-child(3) {
 }
 
 .desc-img {
-/*  height: 400px;*/
-  background-color: #ddd;
-  margin: 30px auto;
+  /*  height: 400px;*/
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: white;
+  padding: 5px;
+  margin: 2vh auto;
+  max-width: 25vh;
+  object-fit: contain;
+  float: left;
+  margin: 10px;
 }
+
 .desc-title {
   text-align: left;
   margin: 0 auto;
-  padding: 10px 0;
+  padding: 10px 10px;
   color: black;
   font-size: 3em;
   font-family: 'Blokk', Arial, serif;
 }
+
 .desc-text {
   text-align: left;
   margin: 0 auto;
@@ -388,8 +408,12 @@ p.desc-text:nth-child(3) {
   padding-bottom: 100px;
 }
 
+
 /* Simple fallback */
+
+
 /* if any of these are not supported, a simple fallback will be shown */
+
 .no-pointerevents .content,
 .no-csstransforms3d .content,
 .no-csstransitions .content,
@@ -422,12 +446,11 @@ p.desc-text:nth-child(3) {
 }
 
 
-
 /**************
   FOOTER
 ***************/
-footer
-{
+
+footer {
   border-top: 5px solid #2980b9;
   background-color: #34495e;
   padding: 24px;
@@ -435,35 +458,29 @@ footer
 }
 
 footer,
-footer a
-{
+footer a {
   color: white;
 }
 
-footer a:hover
-{
+footer a:hover {
   color: #2980b9;
 }
 
-footer .column ul li
-{
+footer .column ul li {
   margin-bottom: 6px;
 }
 
-footer .column h4
-{
+footer .column h4 {
   border-bottom: 2px solid #2980b9;
   padding-bottom: 12px;
-    margin-bottom: 24px;
+  margin-bottom: 24px;
 }
 
-footer .column .glyphicon-chevron-right
-{
+footer .column .glyphicon-chevron-right {
   margin-right: 6px;
   color: #2980b9;
 }
 
-.social-icons
-{
+.social-icons {
   margin-bottom: 12px;
 }
