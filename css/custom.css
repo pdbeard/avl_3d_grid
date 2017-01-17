@@ -1,3 +1,26 @@
+@font-face {
+  font-family: 'fontawesome';
+  src:url('../fonts/fontawesome/fontawesome.eot?-v92fkb');
+  src:url('../fonts/fontawesome/fontawesome.eot?#iefix-v92fkb') format('embedded-opentype'),
+    url('../fonts/fontawesome/fontawesome.woff?-v92fkb') format('woff'),
+    url('../fonts/fontawesome/fontawesome.ttf?-v92fkb') format('truetype'),
+    url('../fonts/fontawesome/fontawesome.svg?-v92fkb#fontawesome') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+@font-face {
+  font-weight: normal;
+  font-style: normal;
+  font-family: 'codropsicons';
+  src:url('../fonts/codropsicons/codropsicons.eot');
+  src:url('../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/codropsicons/codropsicons.woff') format('woff'),
+    url('../fonts/codropsicons/codropsicons.ttf') format('truetype'),
+    url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
+}
+
 body
 {
   background-color: #f1f5f8;
@@ -17,7 +40,6 @@ body
 }
 .portfolio-sorting
 {
-
   position:relative;
   text-transform: uppercase;
   font-size: 16px;
@@ -46,7 +68,7 @@ body
 .portfolio-sorting li a:hover,
 .portfolio-sorting li a.active
 {
-  color: #b9c9d8;
+  color: #bd888a;
 }
 
 .portfolio-item
@@ -54,7 +76,9 @@ body
   margin-bottom: 30px;
 }
 
-
+.shadow{
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
 
 
@@ -134,8 +158,10 @@ Content Loading
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+li.resort{
 
-.close-content {
+}
+span.close-content {
   position: fixed;
   z-index: 1000;
   top: 0;
@@ -146,8 +172,8 @@ Content Loading
   pointer-events: none;
   padding: 1em;
   opacity: 0;
-  -webkit-transition: opacity 0.3s;
-  transition: opacity 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .close-content:hover {

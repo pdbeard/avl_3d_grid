@@ -1,291 +1,293 @@
 @font-face {
-	font-family: 'fontawesome';
-	src:url('../fonts/fontawesome/fontawesome.eot?-v92fkb');
-	src:url('../fonts/fontawesome/fontawesome.eot?#iefix-v92fkb') format('embedded-opentype'),
-		url('../fonts/fontawesome/fontawesome.woff?-v92fkb') format('woff'),
-		url('../fonts/fontawesome/fontawesome.ttf?-v92fkb') format('truetype'),
-		url('../fonts/fontawesome/fontawesome.svg?-v92fkb#fontawesome') format('svg');
-	font-weight: normal;
-	font-style: normal;
+  font-family: 'fontawesome';
+  src:url('../fonts/fontawesome/fontawesome.eot?-v92fkb');
+  src:url('../fonts/fontawesome/fontawesome.eot?#iefix-v92fkb') format('embedded-opentype'),
+    url('../fonts/fontawesome/fontawesome.woff?-v92fkb') format('woff'),
+    url('../fonts/fontawesome/fontawesome.ttf?-v92fkb') format('truetype'),
+    url('../fonts/fontawesome/fontawesome.svg?-v92fkb#fontawesome') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 @font-face {
-	font-family: 'Blokk';
-	src: url('../fonts/blokk/BLOKKRegular.eot');
-	src: url('../fonts/blokk/BLOKKRegular.eot?#iefix') format('embedded-opentype'),
-		 url('../fonts/blokk/BLOKKRegular.woff') format('woff'),
-		 url('../fonts/blokk/BLOKKRegular.svg#BLOKKRegular') format('svg');
-	font-weight: normal;
-	font-style: normal;
+  font-weight: normal;
+  font-style: normal;
+  font-family: 'codropsicons';
+  src:url('../fonts/codropsicons/codropsicons.eot');
+  src:url('../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/codropsicons/codropsicons.woff') format('woff'),
+    url('../fonts/codropsicons/codropsicons.ttf') format('truetype'),
+    url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
 }
 
 body {
-	position: relative;
+  position: relative;
 }
 
 .noscroll {
-	overflow: hidden;
+  overflow: hidden;
 }
 
 .grid-wrap {
-	margin: 10px auto 0;
-	max-width: 1090px;
-	width: 100%;
-	padding: 0;
-	-webkit-perspective: 1500px;
-	perspective: 1500px;
+  margin: 10px auto 0;
+  max-width: 1090px;
+  width: 100%;
+  padding: 0;
+  -webkit-perspective: 1500px;
+  perspective: 1500px;
 }
 
 .grid {
-	position: relative;
-	-webkit-transition: all 0.5s cubic-bezier(0,0,0.25,1);
-	transition: all 0.5s cubic-bezier(0,0,0.25,1);
-	-webkit-transform-style: preserve-3d;
-	transform-style: preserve-3d;
+  position: relative;
+  -webkit-transition: all 0.5s cubic-bezier(0,0,0.25,1);
+  transition: all 0.5s cubic-bezier(0,0,0.25,1);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 
 .view-full .grid {
-	-webkit-transform: translateZ(-1500px);
-	transform: translateZ(-1500px);
+  -webkit-transform: translateZ(-1500px);
+  transform: translateZ(-1500px);
 }
 
 .grid figure,
 .grid .placeholder {
-	width: 340px;
-	height: 300px;
+  width: 340px;
+  height: 300px;
 }
 
 .grid figure {
-	margin: 10px;
-	display: inline-block;
-	cursor: pointer;
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+  margin: 10px;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .grid figure.active {
-	opacity: 0;
+  opacity: 0;
 }
 
 .grid .placeholder {
-	pointer-events: none;
-	position: absolute;
-	-webkit-transform-style: preserve-3d;
-	transform-style: preserve-3d;
-	-webkit-transition: all 0.5s ease-out;
-	transition: all 0.5s ease-out;
+  pointer-events: none;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
 
 .placeholder > div {
-	display: block;
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .placeholder .front img {
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .placeholder .back {
-	background: white;
-	-webkit-transform: rotateY(180deg);
-	transform: rotateY(180deg);
+  background: white;
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .view-full .placeholder {
-	-webkit-transition: all 0.5s 0.1s cubic-bezier(0,0,0.25,1);
-	transition: all 0.5s 0.1s cubic-bezier(0,0,0.25,1);
+  -webkit-transition: all 0.5s 0.1s cubic-bezier(0,0,0.25,1);
+  transition: all 0.5s 0.1s cubic-bezier(0,0,0.25,1);
 }
 
 .vertical .view-full .placeholder {
-	-webkit-transform: translateZ(1500px) rotateX(-179.9deg);
-	transform: translateZ(1500px) rotateX(-179.9deg); /* FF, Chrome, can we agree on one direction, pleeease? */
+  -webkit-transform: translateZ(1500px) rotateX(-179.9deg);
+  transform: translateZ(1500px) rotateX(-179.9deg); /* FF, Chrome, can we agree on one direction, pleeease? */
 }
 
 .horizontal .view-full .placeholder {
-	-webkit-transform: translateZ(1500px) rotateY(-179.9deg);
-	transform: translateZ(1500px) rotateY(-179.9deg);
+  -webkit-transform: translateZ(1500px) rotateY(-179.9deg);
+  transform: translateZ(1500px) rotateY(-179.9deg);
 }
 
 .grid figure img {
-	display: block;
-	width: 100%;
+  display: block;
+  width: 100%;
 }
 
 .content,
 .loading {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	pointer-events: none; /* Careful, does not work in IE < 11 http://caniuse.com/#search=pointer-events */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none; /* Careful, does not work in IE < 11 http://caniuse.com/#search=pointer-events */
 }
 
 .content {
-	overflow-y: scroll;
-	height: 0; /* What seems to be the problem, officer? Well, we have a second scroll bar in Chrome! */
-	background: #fff;
-	visibility: hidden;
-	z-index: 400;
-	-webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+  height: 0; /* What seems to be the problem, officer? Well, we have a second scroll bar in Chrome! */
+  background: #fff;
+  visibility: hidden;
+  z-index: 400;
+  -webkit-overflow-scrolling: touch;
 }
 
 .loading {
-	opacity: 0;
-	z-index: 1;
-	background: transparent url(../img/preloader.gif) no-repeat center center;
-	-webkit-transform: scale(0.5);
-	transform: scale(0.5);
-	-webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
-	transition: opacity 0.5s, transform 0.5s;
+  opacity: 0;
+  z-index: 1;
+  background: transparent url(../img/preloader.gif) no-repeat center center;
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+  -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s;
 }
 
 .loading.show {
-	opacity: 1;
-	-webkit-transform: scale(1);
-	transform: scale(1);
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
 }
 
 .content.show {
-	height: auto;
-	pointer-events: auto;
-	visibility: visible;
+  height: auto;
+  pointer-events: auto;
+  visibility: visible;
 }
 
 .content > div {
-	z-index: 10;
-	position: absolute;
-	top: 0;
-	width: 100%;
-	overflow: hidden;
-	height: 0;
-	opacity: 0;
-	background: #fff;
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  height: 0;
+  opacity: 0;
+  background: #fff;
 }
 
 .content > div.show {
-	height: auto;
-	opacity: 1;	
-	-webkit-transition: opacity 0.6s;
-	transition: opacity 0.6s;
+  height: auto;
+  opacity: 1;
+  -webkit-transition: opacity 0.6s;
+  transition: opacity 0.6s;
 }
 
 .icon:before {
-	font-family: 'fontawesome';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  font-family: 'fontawesome';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .close-content {
-	position: fixed;
-	z-index: 1000;
-	top: 0;
-	right: 10px;
-	font-size: 1.6em;
-	color: #aaa;
-	cursor: pointer;
-	pointer-events: none;
-	padding: 1em;
-	opacity: 0;
-	-webkit-transition: opacity 0.3s;
-	transition: opacity 0.3s;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 10px;
+  font-size: 1.6em;
+  color: #aaa;
+  cursor: pointer;
+  pointer-events: none;
+  padding: 1em;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
 }
 
 .close-content:hover {
-	color: #999;
+  color: #999;
 }
 
 .content > div.show ~ .close-content {
-	opacity: 1;
-	pointer-events: auto;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .close-content:before {
-	content: "\e602";
+  content: "\e602";
 }
 
 /* Dummy content */
 
 .dummy-img,
 .dummy-text {
-	max-width: 600px;
-	width: 90%;
-	opacity: 0;
-	-webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
-	transition: opacity 0.5s, transform 0.5s;
+  max-width: 600px;
+  width: 90%;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s;
 }
 
 .vertical .dummy-img,
 .vertical .dummy-text {
-	-webkit-transform: translateY(100px);
-	transform: translateY(100px);
+  -webkit-transform: translateY(100px);
+  transform: translateY(100px);
 }
 
 .horizontal .dummy-img,
 .horizontal .dummy-text {
-	-webkit-transform: translateX(-100px);
-	transform: translateX(-100px);
+  -webkit-transform: translateX(-100px);
+  transform: translateX(-100px);
 }
 
 .content > div.show .dummy-img,
 .content > div.show .dummy-text {
-	opacity: 1;
+  opacity: 1;
 }
 
 .vertical .content > div.show .dummy-img,
 .vertical .content > div.show .dummy-text {
-	-webkit-transform: translateY(0);
-	transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
 }
 
 .horizontal .content > div.show .dummy-img,
 .horizontal .content > div.show .dummy-text {
-	-webkit-transform: translateX(0);
-	transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
 }
 
 p.dummy-text:nth-child(2) {
-	-webkit-transition-delay: 0.1s;
-	transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
 }
 
 p.dummy-text:nth-child(3) {
-	-webkit-transition-delay: 0.2s;
-	transition-delay: 0.2s;
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
 }
 
 .dummy-img {
-	height: 400px;
-	background-color: #ddd;
-	margin: 30px auto;
+  height: 400px;
+  background-color: #ddd;
+  margin: 30px auto;
 }
 
 .dummy-text {
-	text-align: left;
-	margin: 0 auto;
-	padding: 10px 0;
-	color: #ddd;
-	font-size: 1em;
-	font-family: 'Blokk', Arial, serif;
+  text-align: left;
+  margin: 0 auto;
+  padding: 10px 0;
+  color: #ddd;
+  font-size: 1em;
+  font-family: 'Blokk', Arial, serif;
 }
 
 .dummy-text:last-child {
-	padding-bottom: 100px;
+  padding-bottom: 100px;
 }
 
 /* Simple fallback */
@@ -299,10 +301,10 @@ p.dummy-text:nth-child(3) {
 .no-pointerevents .close-content,
 .no-csstransforms3d .close-content,
 .no-csstransitions .close-content {
-	opacity: 1;
-	visibility: visible;
-	display: none;
-	height: auto;
+  opacity: 1;
+  visibility: visible;
+  display: none;
+  height: auto;
 }
 
 .no-pointerevents .show .close-content,
@@ -314,19 +316,19 @@ p.dummy-text:nth-child(3) {
 .no-csstransitions .dummy-img,
 .no-csstransitions .dummy-text,
 .no-csstransforms3d .dummy-img,
-.no-csstransforms3d .dummy-text, 
+.no-csstransforms3d .dummy-text,
 .no-pointerevents .dummy-img,
 .no-pointerevents .dummy-text {
-	display: block !important;
-	opacity: 1;
+  display: block !important;
+  opacity: 1;
 }
 
 @media screen and (max-width: 1000px) {
 
-	.grid figure,
-	.grid .placeholder {
-		width: 240px;
-		height: 212px;
-	}
+  .grid figure,
+  .grid .placeholder {
+    width: 240px;
+    height: 212px;
+  }
 
 }

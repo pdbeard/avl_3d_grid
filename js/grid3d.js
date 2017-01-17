@@ -39,6 +39,8 @@
     this.contentItems = [].slice.call( this.contentEl.children );
     // close content cross
     this.close = this.contentEl.querySelector( 'span.close-content' );
+    // closes content on resort
+//    this.resort = this.contentEl.querySelctor('li.resort');
     // loading indicator
     this.loader = this.contentEl.querySelector( 'span.loading' );
     // support: support for pointer events, transitions and 3d transforms
@@ -61,6 +63,9 @@
     this.close.addEventListener( 'click', function() {
       self._hideContent();
     } );
+//    this.resort.addEventListener( 'click', function() {
+//      self._hideContent();
+//    } );
 
     if( this.support ) {
       // window resize
