@@ -5,15 +5,8 @@
   font-weight: normal;
   font-style: normal;
 }
-
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
-@font-face {
-  font-weight: normal;
-  font-style: normal;
-  font-family: 'codropsicons';
-  src: url('../fonts/codropsicons/codropsicons.eot');
-  src: url('../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'), url('../fonts/codropsicons/codropsicons.woff') format('woff'), url('../fonts/codropsicons/codropsicons.ttf') format('truetype'), url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
-}
+@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC');
+/*font-family: 'Bowlby One SC', cursive;*/
 
 body {
   /*  background-color: #f1f5f8;*/
@@ -50,11 +43,26 @@ body {
   padding: 0px;
   list-style: none;
 }
-
+/*
+.main_title{
+  border:solid 5px #01426A;
+  background-color:#006298;
+  color:White;
+}
+*/
+.main_title{
+  font-family: 'Bowlby One SC', cursive;
+  color:White;
+  font-size:2em;
+/*  padding-left:10px;*/
+  margin:10px;
+}
 .main_category_titles {
   color: white;
   margin: 10px;
   padding: 0px;
+  font-size:1.5em;
+  font-weight:bold;
 }
 
 .portfolio-sorting li a {
@@ -282,7 +290,7 @@ Content Loading
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
-  line-height: 1;
+  line-height: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -292,16 +300,25 @@ li.resort {}
 span.close-content {
   position: fixed;
   z-index: 1000;
-  top: 0;
-  right: 10px;
-  font-size: 1.6em;
-  color: #aaa;
+  top: 16.5vh;
+  right: 16.5vw;
+  font-size: 3em;
+  color: #555555;
   cursor: pointer;
   pointer-events: none;
-  padding: 1em;
+  padding: .1em .4em 0em .4em;
   opacity: 0;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+  background-color:white;
+  -moz-border-radius: 50%;
+   -webkit-border-radius: 50%;
+   border-radius: 50%;
+
+  -webkit-box-shadow: 0px 0px 27px 3px rgba(0,0,0,0.49);
+-moz-box-shadow: 0px 0px 27px 3px rgba(0,0,0,0.49);
+box-shadow: 0px 0px 27px 3px rgba(0,0,0,0.49);
+
 }
 
 .close-content:hover {
@@ -317,14 +334,13 @@ span.close-content {
   content: "\e602";
 }
 
-
-/* desc content */
+/***************
+ desc content
+***************/
 
 .desc-img,
 .desc-text,
 .desc-title {
-  max-width: 600px;
-  width: 90%;
   opacity: 0;
   -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
   transition: opacity 0.5s, transform 0.5s;
@@ -374,23 +390,32 @@ p.desc-text:nth-child(3) {
   transition-delay: 0.2s;
 }
 
+.desc-wrapper{
+/*  padding-top:10vh;*/
+  width:75%;
+  margin:auto;
+}
 .desc-img {
-  /*  height: 400px;*/
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background-color: white;
   padding: 5px;
-  margin: 2vh auto;
+  margin: 0vh 2vh 2vh 2vh;
   max-width: 25vh;
   object-fit: contain;
   float: left;
-  margin: 10px;
+/*  margin: 10px;*/
 }
 
 .desc-title {
-  text-align: left;
-  margin: 0 auto;
-  padding: 10px 10px;
-  color: black;
+  text-align: center;
+  right:0;
+  left:0;
+  margin-right:auto;
+  margin-left:auto;
+  padding-top:2vh;
+  padding-bottom: 2vh;
+  color: white;
+  background-color:#006298;
   font-size: 3em;
   font-family: 'Blokk', Arial, serif;
 }
@@ -400,7 +425,7 @@ p.desc-text:nth-child(3) {
   margin: 0 auto;
   padding: 10px 0;
   color: black;
-  font-size: 1em;
+  font-size: 1.9em;
   font-family: 'Blokk', Arial, serif;
 }
 
@@ -410,8 +435,6 @@ p.desc-text:nth-child(3) {
 
 
 /* Simple fallback */
-
-
 /* if any of these are not supported, a simple fallback will be shown */
 
 .no-pointerevents .content,
@@ -446,41 +469,3 @@ p.desc-text:nth-child(3) {
 }
 
 
-/**************
-  FOOTER
-***************/
-
-footer {
-  border-top: 5px solid #2980b9;
-  background-color: #34495e;
-  padding: 24px;
-  font-size: 16px;
-}
-
-footer,
-footer a {
-  color: white;
-}
-
-footer a:hover {
-  color: #2980b9;
-}
-
-footer .column ul li {
-  margin-bottom: 6px;
-}
-
-footer .column h4 {
-  border-bottom: 2px solid #2980b9;
-  padding-bottom: 12px;
-  margin-bottom: 24px;
-}
-
-footer .column .glyphicon-chevron-right {
-  margin-right: 6px;
-  color: #2980b9;
-}
-
-.social-icons {
-  margin-bottom: 12px;
-}
