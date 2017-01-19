@@ -2,7 +2,6 @@
 ;
 (function (window) {
 
-
   'use strict';
 
   function grid3D(el, options) {
