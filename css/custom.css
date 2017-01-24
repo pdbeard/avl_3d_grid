@@ -253,6 +253,7 @@ Content Loading
 
 .content.show {
   height: 100vh;
+/*    display:inline-block;*/
   pointer-events: auto;
   visibility: visible;
   -webkit-transition: all 0.5s, -webkit-transform 0.5s;
@@ -277,6 +278,7 @@ Content Loading
 }
 
 .content > div.show {
+/*  display:inline-block;*/
   height: 50vh;
   opacity: 1;
   -webkit-transition: opacity 0.6s;
@@ -392,6 +394,7 @@ p.desc-text:nth-child(3) {
 
 .desc-wrapper{
 /*  padding-top:10vh;*/
+  display:inline-block;
   width:75%;
   margin:auto;
 }
@@ -400,12 +403,17 @@ p.desc-text:nth-child(3) {
   background-color: white;
   padding: 5px;
   margin: 0vh 2vh 2vh 2vh;
-  max-width: 25vh;
+  max-width: 30%;
+  max-height:50%;
   object-fit: contain;
   float: left;
 /*  margin: 10px;*/
 }
+.desc-right{
+  float:right;
 
+  max-width:60%;
+}
 .desc-title {
   text-align: center;
   right:0;
@@ -420,18 +428,28 @@ p.desc-text:nth-child(3) {
   font-family: 'Blokk', Arial, serif;
 }
 
+
 .desc-text {
+
   text-align: left;
   margin: 0 auto;
   padding: 10px 0;
   color: black;
-  font-size: 1.9em;
+  font-size: 1.8em;
   font-family: 'Blokk', Arial, serif;
 }
 
 .desc-text:last-child {
   padding-bottom: 100px;
 }
+.label_title{
+  float:left;
+}
+.label{
+  font-size:1.3em;
+  float:right;
+}
+
 
 
 /* Simple fallback */

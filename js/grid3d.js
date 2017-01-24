@@ -2,7 +2,6 @@
 ;
 (function (window) {
 
-
   'use strict';
 
   function grid3D(el, options) {
@@ -14,39 +13,43 @@
 
   // any options you might want to configure
   grid3D.prototype.options = {};
-
   grid3D.prototype._init = function () {
+
     // grid wrapper
     this.gridWrap = this.el.querySelector('div.grid_wrap');
+
     // grid element
     this.grid = this.gridWrap.querySelector('ul.portfolio-items');
-    console.log(this.grid);
+
     // main grid items
     this.gridItems = [].slice.call(this.grid.children);
-    console.log(this.gridItems);
+
     // default sizes for grid items
     this.itemSize = {
       width: this.gridItems[0].offsetWidth,
       height: this.gridItems[0].offsetHeight
     };
     // content
-    console.log(this.gridItems[0].children[1]);
     this.contentEl = this.el.querySelector('div.content');
-    //    console.log(this.contentEl);
+
     // content items
     this.contentItems = [].slice.call(this.contentEl.children);
-    //    console.log(this.contentItems);
+    console.log("36: "+this.contenteItems);
+
     // close content cross
     this.close = this.contentEl.querySelector('span.close-content');
+
     // closes content on resort
     this.resort = this.el.querySelectorAll('li.resort');
-    //    this.all_close = [].slice.call(this.resort.children);
-    console.log(this.resort);
+    //this.all_close = [].slice.call(this.resort.children);
+
     // loading indicator
     this.loader = this.contentEl.querySelector('span.loading');
+
     // support: support for pointer events, transitions and 3d transforms
     this.support = support.pointerevents && support.csstransitions && support.csstransforms3d;
     this.select_body = document.getElementsByTagName("BODY")[0];
+
     // init events
     this._initEvents();
   };
