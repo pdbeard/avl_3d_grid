@@ -34,7 +34,6 @@
 
     // content items
     this.contentItems = [].slice.call(this.contentEl.children);
-    console.log("36: "+this.contenteItems);
 
     // close content cross
     this.close = this.contentEl.querySelector('span.close-content');

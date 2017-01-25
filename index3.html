@@ -19,7 +19,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body>
+<body class="gradient-pattern">
   <section class="portfolio" id="grid3d">
     <div class="content-placeholder"></div>
     <script id="grid_template" type="text/x-handlebars-template">
@@ -29,30 +29,32 @@
             <div class="sidebar_area">
              <!--Portfolio sort / sidebar-->
               <h1 class="main_title">3D Print Browser</h1>
-              <ul class="portfolio-sorting filter-group filter-group--compound js-display">
-                <li class="resort"><a href="#" data-group="all" class="active">Display All</a></li>
+              <ul class="portfolio-sorting filter-group filter-group--compound js-all js-display">
+                <li class="resort"><a href="#" data-group="all">Display All</a></li>
                 <li class="resort"><a href="#" data-group="none">Display None</a></li>
               </ul>
+<!--
               <h1 class="main_category_titles">Location</h1>
               <ul class="portfolio-sorting filter-group filter-group--compound js-location">
                 <li class="resort"><a href="#" data-group="IUB">IUB</a></li>
                 <li class="resort"><a href="#" data-group="IUPUI">IUPUI</a></li>
               </ul>
+-->
               <h1 class="main_category_titles">Print Material</h1>
-              <ul class="portfolio-sorting filter-group filter-group--compound js-material">
-                <li class="resort"><a href="#" data-group="mat_Rigid">Rigid</a></li>
-                <li class="resort"><a href="#" data-group="mat_Resin">Resin</a></li>
-                <li class="resort"><a href="#" data-group="mat_Plastic">Flexible Plastic</a></li>
-                <li class="resort"><a href="#" data-group="mat_Sandstone">Sandstone</a></li>
-                <li class="resort"><a href="#" data-group="mat_PLA_Plastic">PLA_Plastic</a></li>
-                <li class="resort"><a href="#" data-group="mat_PLA_Wood">PLA_Wood</a></li>
+              <ul class="portfolio-sorting filter-group filter-group--compound js-all js-material">
+                <li class="resort"><a href="#" data-group="Rigid Opaque Photopolymer">Rigid Opaque Photopolymer</a></li>
+                <li class="resort"><a href="#" data-group="Resin">Resin</a></li>
+                <li class="resort"><a href="#" data-group="Flexible Plastic">Flexible Plastic</a></li>
+                <li class="resort"><a href="#" data-group="Sandstone">Sandstone</a></li>
+                <li class="resort"><a href="#" data-group="PLA Plastic Filament">PLA Plastic Filament</a></li>
+                <li class="resort"><a href="#" data-group="PLA Wood Filament">PLA Wood Filament</a></li>
               </ul>
-              <h1 class="main_category_titles">Print Service</h1>
-              <ul class="portfolio-sorting filter-group filter-group--compound js-service">
-                <li class="resort"><a href="#" data-group="lab_timi">T.I.M.I Print Lab</a></li>
-                <li class="resort"><a href="#" data-group="lab_uits">U.I.T.S Print Lab</a></li>
-                <li class="resort"><a href="#" data-group="lab_shapeways">Shapeways</a></li>
-                <li class="resort"><a href="#" data-group="lab_mccalla">AVL McCalla Lab</a></li>
+              <h1 class="main_category_titles">Print Facilities</h1>
+              <ul class="portfolio-sorting filter-group filter-group--compound js-all js-service">
+                <li class="resort"><a href="#" data-group="T.I.M.I Print Lab">T.I.M.I Print Lab</a></li>
+                <li class="resort"><a href="#" data-group="U.I.T.S Print Lab">U.I.T.S Print Lab</a></li>
+                <li class="resort"><a href="#" data-group="Shapeways">Shapeways</a></li>
+                <li class="resort"><a href="#" data-group="AVL McCalla Lab">AVL McCalla Lab</a></li>
               </ul>
             </div>
           </div>
@@ -63,7 +65,7 @@
 
               {{#each objects}}
               <li class="col-md-4 col-sm-4 col-xs-6 portfolio-item"
-                  data-groups='["all","{{location}}","{{print_material}}","{{print_service}}","{{object_type}}"]'
+
                   data-display="all"
                   data-location="{{location}}"
                   data-material="{{print_material}}"
@@ -101,7 +103,7 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <th>Location</th>
+                        <th>Campus</th>
                         <td>{{location}}</td>
                       </tr>
                       <tr>
@@ -111,6 +113,18 @@
                       <tr>
                         <th>Print Facility</th>
                         <td>{{print_service}}</td>
+                      </tr>
+                      <tr>
+                        <th>Collaborators</th>
+                        <td>{{collaborator}}</td>
+                      </tr>
+                      <tr>
+                        <th>Print Date</th>
+                        <td>{{print_date}}</td>
+                      </tr>
+                      <tr>
+                        <th>Printer Type</th>
+                        <td>{{printer_type}}</td>
                       </tr>
                     </tbody>
                   </table>

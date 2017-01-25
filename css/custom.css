@@ -10,9 +10,35 @@
 
 body {
   /*  background-color: #f1f5f8;*/
-  background-color: #dddad6;
+/*  background-color: #dddad6;*/
   height: 100vh;
 }
+
+
+.gradient-pattern {
+/*  -webkit-box-sizing: content-box;*/
+/*  -moz-box-sizing: content-box;*/
+/*  box-sizing: content-box;*/
+/*  width: 320px;*/
+/*  height: 320px;*/
+/*  border: none;*/
+/*  font: normal 0.5px/normal Arial, Helvetica, sans-serif;*/
+/*  color: rgba(255,255,255,1);*/
+/*  -o-text-overflow: clip;*/
+/*  text-overflow: clip;*/
+  background: -webkit-linear-gradient(135deg, rgba(0,0,0,0) 25%, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 75%, rgba(255,255,255,0.2) 75%), -webkit-linear-gradient(45deg, rgba(0,0,0,0) 25%, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 75%, rgba(255,255,255,0.2) 75%), rgb(159, 176, 188);
+  background: -moz-linear-gradient(-45deg, rgba(0,0,0,0) 25%, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 75%, rgba(255,255,255,0.2) 75%), -moz-linear-gradient(45deg, rgba(0,0,0,0) 25%, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 75%, rgba(255,255,255,0.2) 75%), rgb(159, 176, 188);
+  background: linear-gradient(-45deg, rgba(0,0,0,0) 25%, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 75%, rgba(255,255,255,0.2) 75%), linear-gradient(45deg, rgba(0,0,0,0) 25%, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 75%, rgba(255,255,255,0.2) 75%), rgb(159, 176, 188);
+  background-position: auto auto;
+  -webkit-background-origin: padding-box;
+  background-origin: padding-box;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-size: 200em 200em;
+  background-size: 200em 200em;
+}
+
+
 
 .portfolio {
 /*  overflow:hidden;*/
@@ -61,6 +87,7 @@ body {
   color: white;
   margin: 10px;
   padding: 0px;
+  padding-top:2vh;
   font-size:1.5em;
   font-weight:bold;
 }
@@ -420,11 +447,11 @@ p.desc-text:nth-child(3) {
   left:0;
   margin-right:auto;
   margin-left:auto;
-  padding-top:2vh;
-  padding-bottom: 2vh;
+  padding-top:1.6vh;
+  padding-bottom: 1.6vh;
   color: white;
   background-color:#006298;
-  font-size: 3em;
+  font-size: 2.7em;
   font-family: 'Blokk', Arial, serif;
 }
 
@@ -435,7 +462,7 @@ p.desc-text:nth-child(3) {
   margin: 0 auto;
   padding: 10px 0;
   color: black;
-  font-size: 1.8em;
+  font-size: 1.35em;
   font-family: 'Blokk', Arial, serif;
 }
 
@@ -448,6 +475,10 @@ p.desc-text:nth-child(3) {
 .label{
   font-size:1.3em;
   float:right;
+}
+
+.table{
+  margin-top:.8vh;
 }
 
 
