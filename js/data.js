@@ -1,8 +1,8 @@
-var data = {
-  objects: [
+var data =[
     {
       "title": "Benjamin Harrison Statue",
       "url": "img_prints/benHarrisonStatue2.jpg",
+      "url2": "img_prints/iuPlaque.jpg",
       "location": "IUPUI",
       "print_material": "Resin",
       "print_service": "T.I.M.I Print Lab",
@@ -17,6 +17,7 @@ var data = {
     {
       "title": "IU Medical Plaque",
       "url": "img_objects/iuPlaque.jpg",
+      "url2": "img_objects/iuPlaque.jpg",
       "location": "IUPUI",
       "print_material": "Rigid Opaque Photopolymer",
       "print_service": "T.I.M.I Print Lab",
@@ -30,6 +31,7 @@ var data = {
   }, {
       "title": "IU Medical Plaque",
       "url": "img_prints/iuPlaque2.jpg",
+    "url2": "img_prints/iuPlaque2.jpg",
       "location": "IUPUI",
       "print_material": "Rigid Opaque Photopolymer",
       "print_service": "T.I.M.I Print Lab",
@@ -43,6 +45,7 @@ var data = {
   }, {
       "title": "Mastodon Jaw Bone Fossil",
       "url": "img_prints/jawbonefossil.jpg",
+    "url2": "img_prints/jawbonefossil.jpg",
       "location": "IUB",
       "print_material": "PLA Plastic Filament",
       "print_service": "T.I.M.I Print Lab",
@@ -56,6 +59,7 @@ var data = {
   }, {
       "title": "Mastodon Jaw Bone Fossil",
       "url": "img_objects/jawbonefossil.jpg",
+    "url2": "img_objects/jawbonefossil.jpg",
       "location": "IUB",
       "print_material": "PLA Plastic Filament",
       "print_service": "T.I.M.I Print Lab",
@@ -69,6 +73,7 @@ var data = {
   }, {
       "title": "Clam Fossil",
       "url": "img_objects/clamFossil.jpg",
+    "url2": "img_objects/clamFossil.jpg",
       "location": "IUB",
       "print_material": "PLA Plastic Filament",
       "print_service": "T.I.M.I Print Lab",
@@ -83,6 +88,7 @@ var data = {
   , {
       "title": "Clam Fossil",
       "url": "img_prints/clamFossil.jpg",
+    "url2": "img_prints/clamFossil.jpg",
       "location": "IUB",
       "print_material": "PLA Plastic Filament",
       "print_service": "T.I.M.I Print Lab",
@@ -96,6 +102,7 @@ var data = {
   }, {
       "title": "Doctor Bust",
       "url": "img_prints/doctorBust.jpg",
+    "url2": "img_prints/doctorBust.jpg",
       "location": "IUPUI",
       "print_material": "PLA Plastic Filament",
       "print_service": "T.I.M.I Print Lab",
@@ -109,6 +116,7 @@ var data = {
   }, {
       "title": "Doctor Bust",
       "url": "img_objects/doctorBust.jpg",
+    "url2": "img_objects/doctorBust.jpg",
       "location": "IUPUI",
       "print_material": "PLA Plastic Filament",
       "print_service": "T.I.M.I Print Lab",
@@ -122,6 +130,7 @@ var data = {
   }, {
       "title": "OB Forceps",
       "url": "img_objects/obForceps.jpg",
+    "url2": "img_objects/obForceps.jpg",
       "location": "IUPUI",
       "print_material": "Rigid Opaque Photopolymer",
       "print_service": "T.I.M.I Print Lab",
@@ -135,6 +144,7 @@ var data = {
   }, {
       "title": "OB Forceps",
       "url": "img_prints/obForceps.jpg",
+    "url2": "img_prints/obForceps.jpg",
       "location": "IUPUI",
       "print_material": "Rigid Opaque Photopolymer",
       "print_service": "T.I.M.I Print Lab",
@@ -148,6 +158,7 @@ var data = {
   }, {
       "title": "Barber's Bleeder Bowl",
       "url": "img_objects/barberBleederBowl.jpg",
+    "url2": "img_objects/barberBleederBowl.jpg",
       "location": "IUPUI",
       "print_material": "Sandstone",
       "print_service": "Shapeways",
@@ -161,6 +172,7 @@ var data = {
   }, {
       "title": "Barber's Bleeder Bowl",
       "url": "img_prints/barberBleederBowl.jpg",
+    "url2": "img_prints/barberBleederBowl.jpg",
       "location": "IUPUI",
       "print_material": "Sandstone",
       "print_service": "Shapeways",
@@ -174,6 +186,7 @@ var data = {
   }, {
       "title": "Elephant",
       "url": "img_objects/elephant2.jpg",
+    "url2": "img_objects/elephant2.jpg",
       "location": "IUPUI",
       "print_material": "PLA Wood Filament",
       "print_service": "U.I.T.S Print Lab",
@@ -187,6 +200,7 @@ var data = {
   }, {
       "title": "Elephant",
       "url": "img_prints/elephant.jpg",
+    "url2": "img_prints/elephant.jpg",
       "location": "IUPUI",
       "print_material": "PLA Wood Filament",
       "print_service": "U.I.T.S Print Lab",
@@ -200,6 +214,7 @@ var data = {
   }, {
       "title": "CPR Set",
       "url": "img_prints/cprSet2.jpg",
+    "url2": "img_prints/cprSet2.jpg",
       "location": "IUPUI",
       "print_material": "PLA Plastic Filament",
       "print_service": "U.I.T.S Print Lab",
@@ -213,6 +228,7 @@ var data = {
   }, {
       "title": "CPR Set",
       "url": "img_objects/cprDummy.jpg",
+    "url2": "img_objects/cprDummy.jpg",
       "location": "IUPUI",
       "print_material": "PLA Plastic Filament",
       "print_service": "U.I.T.S Print Lab",
@@ -226,6 +242,7 @@ var data = {
   }, {
       "title": "Clarinet Mouth Piece",
       "url": "img_prints/clarinetMouthPiece2.jpg",
+    "url2": "img_prints/clarinetMouthPiece2.jpg",
       "location": "IUB",
       "print_material": "Resin",
       "print_service": "T.I.M.I Print Lab",
@@ -240,6 +257,7 @@ var data = {
     {
       "title": "Finch Bird Skull",
       "url": "img_prints/birdSkull.jpg",
+      "url2": "img_prints/birdSkull.jpg",
       "location": "IUB",
       "print_material": "Flexible Plastic",
       "print_service": "Shapeways",
@@ -254,6 +272,7 @@ var data = {
     {
       "title": "Finch Bird Skull",
       "url": "img_objects/birdSkull.jpg",
+      "url2": "img_objects/birdSkull.jpg",
       "location": "IUB",
       "print_material": "Flexible Plastic",
       "print_service": "Shapeways",
@@ -268,6 +287,7 @@ var data = {
     {
       "title": "Nuclear Pasta' Model",
       "url": "img_prints/nuclearPasta.jpg",
+      "url2": "img_prints/nuclearPasta.jpg",
       "location": "IUB",
       "print_material": "Flexible Plastic",
       "print_service": "Shapeways",
@@ -281,6 +301,7 @@ var data = {
   }, {
       "title": "Architechtural Model",
       "url": "img_prints/architechturalModel.jpg",
+      "url2": "img_prints/architechturalModel.jpg",
       "location": "IUPUI",
       "print_material": "Sandstone",
       "print_service": "",
@@ -294,6 +315,7 @@ var data = {
   }, {
       "title": "Cancer Cell Model",
       "url": "img_prints/cancerCell2.jpg",
+      "url2": "img_prints/cancerCell2.jpg",
       "location": "IUPUI",
       "print_material": "Sandstone",
       "print_service": "AVL McCalla Lab",
@@ -306,4 +328,3 @@ var data = {
       "description": "Randy Heiland lead supercomputing simulation. 3D printed to showcase results, and for further study and analysis."
   }
 ]
-};

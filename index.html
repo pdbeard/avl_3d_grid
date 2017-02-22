@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   <title>AVL Sort</title>
-
   <!-- Bootstrap -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/custom.css" rel="stylesheet">
@@ -20,508 +18,170 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-
-<body>
+<body class="gradient-pattern">
   <section class="portfolio" id="grid3d">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-2 sidebar_area sidebar_space">
-          <div class="sidebar_area">
-<!--            <img src="img/3d_title.png" alt="Title" style="width:100%">-->
-           <h1 class="main_title">3D Print Browser</h1>
-
-            <ul class="portfolio-sorting">
-              <li class="resort"><a href="#" data-group="all" class="active">Display All</a></li>
-              <li class="resort"><a href="#" data-group="none">Display None</a></li>
-            </ul>
-            <h1 class="main_category_titles">Location</h1>
-            <ul class="portfolio-sorting">
-              <li class="resort"><a href="#" data-group="IUB">IUB</a></li>
-              <li class="resort"><a href="#" data-group="IUPUI">IUPUI</a></li>
-            </ul>
-            <h1 class="main_category_titles">Print Material</h1>
-            <ul class="portfolio-sorting">
-              <li class="resort"><a href="#" data-group="mat_Rigid">Rigid</a></li>
-              <li class="resort"><a href="#" data-group="mat_Resin">Resin</a></li>
-              <li class="resort"><a href="#" data-group="mat_Plastic">Flexible Plastic</a></li>
-              <li class="resort"><a href="#" data-group="mat_Sandstone">Sandstone</a></li>
-              <li class="resort"><a href="#" data-group="mat_PLA_Plastic">PLA_Plastic</a></li>
-              <li class="resort"><a href="#" data-group="mat_PLA_Wood">PLA_Wood</a></li>
-            </ul>
-            <h1 class="main_category_titles">Print Service</h1>
-            <ul class="portfolio-sorting">
-              <li class="resort"><a href="#" data-group="lab_timi">T.I.M.I Print Lab</a></li>
-              <li class="resort"><a href="#" data-group="lab_uits">U.I.T.S Print Lab</a></li>
-              <li class="resort"><a href="#" data-group="lab_shapeways">Shapeways</a></li>
-              <li class="resort"><a href="#" data-group="lab_mccalla">AVL McCalla Lab</a></li>
-            </ul>
-            <!--end portfolio sorting -->
+    <div class="content-placeholder"></div>
+    <script id="grid_template" type="text/x-handlebars-template">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-2 sidebar_area sidebar_space">
+            <div class="sidebar_area">
+             <!--Portfolio sort / sidebar-->
+              <h1 class="main_title">3D Print Browser</h1>
+              <ul class="portfolio-sorting filter-group filter-group--compound js-all js-display">
+                <li class="resort"><a href="#" data-group="all">Display All</a></li>
+<!--                <li class="resort"><a href="#" data-group="none">Display None</a></li>-->
+              </ul>
+<!--
+              <h1 class="main_category_titles">Location</h1>
+              <ul class="portfolio-sorting filter-group filter-group--compound js-location">
+                <li class="resort"><a href="#" data-group="IUB">IUB</a></li>
+                <li class="resort"><a href="#" data-group="IUPUI">IUPUI</a></li>
+              </ul>
+-->
+              <h1 class="main_category_titles">Print Material</h1>
+              <ul class="portfolio-sorting filter-group filter-group--compound js-all js-material">
+                <li class="resort"><a href="#" data-group="Rigid Opaque Photopolymer">Rigid Opaque Photopolymer</a></li>
+                <li class="resort"><a href="#" data-group="Resin">Resin</a></li>
+                <li class="resort"><a href="#" data-group="Flexible Plastic">Flexible Plastic</a></li>
+                <li class="resort"><a href="#" data-group="Sandstone">Sandstone</a></li>
+                <li class="resort"><a href="#" data-group="PLA Plastic Filament">PLA Plastic Filament</a></li>
+                <li class="resort"><a href="#" data-group="PLA Wood Filament">PLA Wood Filament</a></li>
+              </ul>
+              <h1 class="main_category_titles">Print Facilities</h1>
+              <ul class="portfolio-sorting filter-group filter-group--compound js-all js-service">
+                <li class="resort"><a href="#" data-group="T.I.M.I Print Lab">T.I.M.I Print Lab</a></li>
+                <li class="resort"><a href="#" data-group="U.I.T.S Print Lab">U.I.T.S Print Lab</a></li>
+                <li class="resort"><a href="#" data-group="Shapeways">Shapeways</a></li>
+                <li class="resort"><a href="#" data-group="AVL McCalla Lab">AVL McCalla Lab</a></li>
+              </ul>
+            </div>
           </div>
-        </div>
+          <!--end portfolio sort / sidebar-->
+          <!--grid & description iteration-->
+          <div class="col-sm-10 grid_wrap">
+            <ul class="portfolio-items list-unstyled" id="grid">
 
-        <div class="col-sm-10 grid_wrap">
-          <ul class="portfolio-items list-unstyled" id="grid">
+              {{#each this}}
+              <li class="col-md-4 col-sm-4 col-xs-6 portfolio-item"
 
-            <li class="col-md-4 col-sm-4 col-xs-6 portfolio-item" data-groups='["all","IUB","mat_Resin","lab_timi","prints","prints"]'>
-              <figure class="shadow">
-                <a href="#">
-                  <img src="img/img_prints/benHarrisonStatue2.jpg" alt="Item 1" class="img-responsive">
-                </a>
-              </figure>
-            </li>
+                  data-display="all"
+                  data-location="{{location}}"
+                  data-material="{{print_material}}"
+                  data-service="{{print_service}}">
 
-            <li class="col-md-4 col-sm-4 col-xs-6 portfolio-item" data-groups='["all","IUPUI","mat_Rigid","lab_uits","objects"]'>
-              <figure class="shadow">
-                <a href="#">
-                  <img src="img/img_objects/iuPlaque.jpg" alt="" class="img-responsive">
-                </a>
-              </figure>
-            </li>
+                <figure class="shadow">
+                  <a href="#">
+                    <img src="img/{{url}}" alt="Item 1" class="img-responsive">
+                  </a>
+                </figure>
+              </li>
+              {{/each}}
 
-            <li class="col-md-4 col-sm-4 col-xs-6 portfolio-item" data-groups='["all","IUPUI","mat_Rigid","lab_uits","prints"]'>
-              <figure class="shadow">
-                <a href="#">
-                  <img src="img/img_prints/iuPlaque2.jpg" alt="" class="img-responsive">
-                </a>
-              </figure>
-            </li>
+              <!-- sizer -->
+              <li class="col-md-4 col-sm-4 col-xs-6 shuffle_sizer"></li>
+            </ul>
+            <div class="content">
 
-            <li class="col-md-4 col-sm-4 col-xs-6 portfolio-item" data-groups='["all","IUB", "mat_PLA_Plastic","lab_timi","prints"]'>
-              <figure class="shadow">
-                <a href="#">
-                  <img src="img/img_prints/jawbonefossil.jpg" alt="" class="img-responsive">
-                </a>
-              </figure>
-            </li>
+              {{#each this}}
+              <div>
+                <p class="desc-title">{{title}}</p>
+                <div class="desc-wrapper">
+                  <div class="desc-imgs">
+                    <div class ="desc-img">
+                      <img src="img/{{url}}" alt="Item 1" class="img-responsive">
+                    </div>
+                    <div class="hr"><hr /></div>
+                    <div class="desc-img">
+                      <img src="img/{{url2}}" alt="Item 1" class="img-responsive">
+                    </div>
+                  </div>
 
-            <li class="col-md-4 col-sm-4 col-xs-6 portfolio-item" data-groups='["all","IUB", "mat_PLA_Plastic","lab_timi","objects"]'>
-              <figure class="shadow">
-                <a href="#">
-                  <img src="img/img_objects/jawbonefossil.jpg" alt="" class="img-responsive">
-                </a>
-              </figure>
-            </li>
+                  <div class="desc-right">
+                  <p class="desc-text">{{description}}</p>
+                  <div class="desc-labels">
 
-            <li class="col-md-4 col-sm-4 col-xs-6 portfolio-item" data-groups='["all","IUB", "mat_PLA_Plastic","lab_timi","objects"]'>
-              <figure class="shadow">
-                <a href="#">
-                  <img src="img/img_objects/clamFossil.jpg" alt="" class="img-responsive">
-                </a>
-              </figure>
-            </li>
+                  <table class="table table-striped table-responsive">
+                    <thead>
+                      <tr>
+<!--                        <th>Categories</th>-->
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>Campus</th>
+                        <td>{{location}}</td>
+                      </tr>
+                      <tr>
+                        <th>Print Material</th>
+                        <td>{{print_material}}</td>
+                      </tr>
+                      <tr>
+                        <th>Print Facility</th>
+                        <td>{{print_service}}</td>
+                      </tr>
+                      <tr>
+                        <th>Collaborators</th>
+                        <td>{{collaborator}}</td>
+                      </tr>
+                      <tr>
+                        <th>Print Date</th>
+                        <td>{{print_date}}</td>
+                      </tr>
+                      <tr>
+                        <th>Printer Type</th>
+                        <td>{{printer_type}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
 
-            <li class="col-md-4 col-sm-4 col-xs-6 portfolio-item" data-groups='["all","IUB", "mat_PLA_Plastic","lab_timi","prints"]'>
-              <figure class="shadow">
-                <a href="#">
-                  <img src="img/img_prints/clamFossil.jpg" alt="" class="img-responsive">
-                </a>
-              </figure>
-            </li>
+<!--
 
-            <li class="col-md-4 col-sm-4 col-xs-6 portfolio-item" data-groups='["all","IUPUI","mat_PLA_Plastic","lab_timi","prints"]'>
-              <figure class="shadow">
-                <a href="#">
-                  <img src="img/img_prints/doctorBust.jpg" alt="" class="img-responsive">
-                </a>
-              </figure>
-            </li>
-
-            <li class="col-md-4 col-sm-4 col-xs-6 portfolio-item" data-groups='["all","IUPUI","mat_PLA_Plastic","lab_timi","objects"]'>
-              <figure class="shadow">
-                <a href="#">
-                  <img src="img/img_objects/doctorBust.jpg" alt="" class="img-responsive">
-                </a>
-              </figure>
-            </li>
-
-            <li class="col-md-4 col-sm-4 col-xs-6 portfolio-item" data-groups='["all","IUPUI","mat_Rigid","lab_timi","objects"]'>
-              <figure class="shadow">
-                <a href="#">
-                  <img src="img/img_objects/obForceps.jpg" alt="" class="img-responsive">
-                </a>
-              </figure>
-            </li>
-
-            <li class="col-md-4 col-sm-4 col-xs-6 portfolio-item" data-groups='["all","IUPUI","mat_Rigid","lab_timi","prints"]'>
-              <figure class="shadow">
-                <a href="#">
-                  <img src="img/img_prints/obForceps.jpg" alt="" class="img-responsive">
-                </a>
-              </figure>
-            </li>
-
-            <li class="col-md-4 col-sm-4 col-xs-6 portfolio-item" data-groups='["all","IUPUI","mat_Sandstone","lab_shapeways","objects","prints"]'>
-              <figure class="shadow">
-                <a href="#">
-                  <img src="img/img_objects/barberBleederBowl.jpg" alt="" class="img-responsive">
-                </a>
-              </figure>
-            </li>
-
-            <li class="col-md-4 col-sm-4 col-xs-6 portfolio-item" data-groups='["all","IUPUI","mat_Sandstone","lab_shapeways","prints"]'>
-              <figure class="shadow">
-                <a href="#">
-                  <img src="img/img_prints/barberBleederBowl.jpg" alt="" class="img-responsive">
-                </a>
-              </figure>
-            </li>
-
-            <li class="col-md-4 col-sm-4 col-xs-6 portfolio-item" data-groups='["all","IUPUI","mat_PLA_Wood","lab_uits","objects","prints"]'>
-              <figure class="shadow">
-                <a href="#">
-                  <img src="img/img_objects/elephant.jpg" alt="" class="img-responsive">
-                </a>
-              </figure>
-            </li>
-
-            <li class="col-md-4 col-sm-4 col-xs-6 portfolio-item" data-groups='["all","IUPUI","mat_PLA_Wood","lab_uits","prints"]'>
-              <figure class="shadow">
-                <a href="#">
-                  <img src="img/img_prints/elephant.jpg" alt="" class="img-responsive">
-                </a>
-              </figure>
-            </li>
-
-            <li class="col-md-4 col-sm-4 col-xs-6 portfolio-item" data-groups='["all","IUPUI","mat_PLA_Plastic","lab_uits","prints"]'>
-              <figure class="shadow">
-                <a href="#">
-                  <img src="img/img_prints/cprSet2.jpg" alt="" class="img-responsive">
-                </a>
-              </figure>
-            </li>
-
-            <li class="col-md-4 col-sm-4 col-xs-6 portfolio-item" data-groups='["all","IUPUI","mat_PLA_Plastic","lab_uits","objects"]'>
-              <figure class="shadow">
-                <a href="#">
-                  <img src="img/img_objects/cprDummy.jpg" alt="" class="img-responsive">
-                </a>
-              </figure>
-            </li>
-
-            <li class="col-md-4 col-sm-4 col-xs-6 portfolio-item" data-groups='["all","IUB","mat_Resin","lab_timi","prints"]'>
-              <figure class="shadow">
-                <a href="#">
-                  <img src="img/img_prints/clarinetMouthPiece2.jpg" alt="" class="img-responsive">
-                </a>
-              </figure>
-            </li>
-
-            <li class="col-md-4 col-sm-4 col-xs-6 portfolio-item" data-groups='["all","IUB","mat_Plastic","lab_shapeways","prints"]'>
-              <figure class="shadow">
-                <a href="#">
-                  <img src="img/img_prints/birdSkull.jpg" alt="" class="img-responsive">
-                </a>
-              </figure>
-            </li>
-
-            <li class="col-md-4 col-sm-4 col-xs-6 portfolio-item" data-groups='["all","IUB","mat_Plastic","lab_shapeways","objects"]'>
-              <figure class="shadow">
-                <a href="#">
-                  <img src="img/img_objects/birdSkull.jpg" alt="" class="img-responsive">
-                </a>
-              </figure>
-            </li>
-
-            <li class="col-md-4 col-sm-4 col-xs-6 portfolio-item" data-groups='["all","IUB","mat_Plastic","lab_shapeways","prints"]'>
-              <figure class="shadow">
-                <a href="#">
-                  <img src="img/img_prints/nuclearPasta.jpg" alt="" class="img-responsive">
-                </a>
-              </figure>
-            </li>
-
-            <li class="col-md-4 col-sm-4 col-xs-6 portfolio-item" data-groups='["all","IUPUI","mat_Sandstone","lab_shapeways","prints"]'>
-              <figure class="shadow">
-                <a href="#">
-                  <img src="img/img_prints/architechturalModel.jpg" alt="" class="img-responsive">
-                </a>
-              </figure>
-            </li>
-
-            <li class="col-md-4 col-sm-4 col-xs-6 portfolio-item" data-groups='["all","IUPUI","mat_Sandstone","lab_mccalla","prints"]'>
-              <figure class="shadow">
-                <a href="#">
-                  <img src="img/img_prints/cancerCell2.jpg" alt="" class="img-responsive">
-                </a>
-              </figure>
-            </li>
-
-            <!-- sizer -->
-            <li class="col-md-4 col-sm-4 col-xs-6 shuffle_sizer"></li>
-          </ul>
-
-          <div class="content">
-            <div>
-              <p class="desc-title">Benjamin Harrison Statue</p>
-              <div class="desc-wrapper">
-                <div class="desc-img">
-                  <img src="img/img_prints/benHarrisonStatue2.jpg" alt="Item 1" class="img-responsive">
+                   <h3 class ="label_title">location</h3><span class ="label label-default">{{location}}</span>
+                   <h3 class ="label_title">location</h3><span class ="label label-default">{{print_material}}</span>
+                  <h3 class ="label_title">location</h3> <span class ="label label-default">{{print_service}}</span>
+                    <span class ="label label-default">{{object_type}}</span></br>
+-->
+                    </div></div>
                 </div>
-                <p class="desc-text">Statue of president Benjamin Harrison that is approximately 3 ft. tall, and made of bronze. From the Benjamin Harrison Presidential Sitecollection. Object digitized using 3D scanning technologies as a means to digital preservation, and 3D printed to showcase results.</p>
               </div>
+              {{/each}}
+
+              <span class="loading"></span>
+              <span class="icon close-content"></span>
             </div>
-
-            <div>
-              <p class="desc-title">IU Medical Plaque</p>
-              <div class="desc-wrapper">
-                <div class="desc-img"> <img src="img/img_objects/iuPlaque.jpg" alt="Item 1" class="img-responsive"></div>
-                <p class="desc-text">"Historical artifact from Ruth Lilly Medical Library collection. Wooden gavel presented to the Medical College of Indiana (Class of 1904) by one of its members.</p>
-              </div>
-            </div>
-
-            <div>
-              <p class="desc-title">IU Medical Plaque</p>
-              <div class="desc-wrapper">
-                <div class="desc-img"> <img src="img/img_prints/iuPlaque2.jpg" alt="Item 1" class="img-responsive"></div>
-                <p class="desc-text">"Historical artifact from Ruth Lilly Medical Library collection. Wooden gavel presented to the Medical College of Indiana (Class of 1904) by one of its members.</p>
-              </div>
-            </div>
-
-            <div>
-              <p class="desc-title">Mastodon Jaw Bone Fossil</p>
-              <div class="desc-wrapper">
-                <div class="desc-img"> <img src="img/img_prints/jawbonefossil.jpg" alt="Item 1" class="img-responsive"></div>
-                <p class="desc-text">"Fossil from Indiana Geological Survey. Original artifact is over 3 ft. in length, and fragile. It was 3D scanned as a way to digital preserve it, then 3D printed to allow further study and analysis, without damaging the original. Object photographed by Barb Hill (Indiana Geological Survey Photographer).</p>
-              </div>
-            </div>
-
-            <div>
-              <p class="desc-title">Mastodon Jaw Bone Fossil</p>
-              <div class="desc-wrapper">
-                <div class="desc-img"> <img src="img/img_objects/jawbonefossil.jpg" alt="Item 1" class="img-responsive"></div>
-                <p class="desc-text">"Fossil from Indiana Geological Survey. Original artifact is over 3 ft. in length, and fragile. It was 3D scanned as a way to digital preserve it, then 3D printed to allow further study and analysis, without damaging the original. Object photographed by Barb Hill (Indiana Geological Survey Photographer).</p>
-              </div>
-            </div>
-
-            <div>
-              <p class="desc-title">Clam Fossil</p>
-              <div class="desc-wrapper">
-                <div class="desc-img"> <img src="img/img_objects/clamFossil.jpg" alt="Item 1" class="img-responsive"></div>
-                <p class="desc-text">Fossil from Indiana University Paleontology Collection. Approximately 80 million year old clam fossil from the Inoceramus genus. It was 3D scanned as a way to digital preserve it, then 3D printed to allow further study and analysis, without damaging the original. Object photographed by Gary Motz (Department of Geological Sciences).</p>
-              </div>
-            </div>
-
-            <div>
-              <p class="desc-title">Clam Fossil</p>
-              <div class="desc-wrapper">
-                <div class="desc-img"> <img src="img/img_prints/clamFossil.jpg" alt="Item 1" class="img-responsive"></div>
-                <p class="desc-text">Fossil from Indiana University Paleontology Collection. Approximately 80 million year old clam fossil from the Inoceramus genus. It was 3D scanned as a way to digital preserve it, then 3D printed to allow further study and analysis, without damaging the original. Object photographed by Gary Motz (Department of Geological Sciences).</p>
-              </div>
-            </div>
-
-            <div>
-              <p class="desc-title">Doctor Bust</p>
-              <div class="desc-wrapper">
-                <div class="desc-img"> <img src="img/img_prints/doctorBust.jpg" alt="Item 1" class="img-responsive"></div>
-                <p class="desc-text">Item from Ruth Lilly Medical Library collection. Stone statue bust of former IU dcotor. Object digitized, then 3D printed to showcase results.</p>
-              </div>
-            </div>
-
-            <div>
-              <p class="desc-title">Doctor Bust</p>
-              <div class="desc-wrapper">
-                <div class="desc-img"> <img src="img/img_prints/doctorBust.jpg" alt="Item 1" class="img-responsive"></div>
-                <p class="desc-text">Item from Ruth Lilly Medical Library collection. Stone statue bust of former IU dcotor. Object digitized, then 3D printed to showcase results.</p>
-              </div>
-            </div>
-
-            <div>
-              <p class="desc-title">OB Forceps</p>
-              <div class="desc-wrapper">
-                <div class="desc-img"> <img src="img/img_objects/obForceps.jpg" alt="Item 1" class="img-responsive"></div>
-                <p class="desc-text">From Ruth Lilly Medical Library collection. Both made of metal, and fit together to allow an open / close motion. Original objects digitized, then 3D printed to simulate functionality.
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <p class="desc-title">OB Forceps</p>
-              <div class="desc-wrapper">
-                <div class="desc-img"> <img src="img/img_prints/obForceps.jpg" alt="Item 1" class="img-responsive"></div>
-                <p class="desc-text">From Ruth Lilly Medical Library collection. Both made of metal, and fit together to allow an open / close motion. Original objects digitized, then 3D printed to simulate functionality.
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <p class="desc-title">Barber's Bleeder Bowl</p>
-              <div class="desc-wrapper">
-                <div class="desc-img"> <img src="img/img_objects/barberBleederBowl.jpg" alt="Item 1" class="img-responsive"></div>
-                <p class="desc-text">From Leo J. McCarthey personal collection. Glazed ceramic bowl, with tan with black painted rabbit design. Used to collect blood during bloodletting, pre civil-war.
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <p class="desc-title">Barber's Bleeder Bowl</p>
-              <div class="desc-wrapper">
-                <div class="desc-img"> <img src="img/img_prints/barberBleederBowl.jpg" alt="Item 1" class="img-responsive"></div>
-                <p class="desc-text">From Leo J. McCarthey personal collection. Glazed ceramic bowl, with tan with black painted rabbit design. Used to collect blood during bloodletting, pre civil-war.
-
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <p class="desc-title">Elephant</p>
-              <div class="desc-wrapper">
-                <div class="desc-img"> <img src="img/img_objects/elephant.jpg" alt="Item 1" class="img-responsive"></div>
-                <p class="desc-text">Lab demo piece showcasing full scan-to-3D print workflow.
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <p class="desc-title">Elephant</p>
-              <div class="desc-wrapper">
-                <div class="desc-img"> <img src="img/img_prints/elephant.jpg" alt="Item 1" class="img-responsive"></div>
-                <p class="desc-text">Lab demo piece showcasing full scan-to-3D print workflow.
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <p class="desc-title">CPR Set</p>
-              <div class="desc-wrapper">
-                <div class="desc-img"> <img src="img/img_prints/cprSet2.jpg" alt="Item 1" class="img-responsive"></div>
-                <p class="desc-text">Objects 3D printed to showcase usability for training applications.
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <p class="desc-title">CPR Set</p>
-              <div class="desc-wrapper">
-                <div class="desc-img"> <img src="img/img_objects/cprDummy.jpg" alt="Item 1" class="img-responsive"></div>
-                <p class="desc-text">Objects 3D printed to showcase usability for training applications.
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <p class="desc-title">Clarinet Mouth Piece</p>
-              <div class="desc-wrapper">
-                <div class="desc-img"> <img src="img/img_prints/clarinetMouthPiece2.jpg" alt="Item 1" class="img-responsive"></div>
-                <p class="desc-text">Artifact is one of a kind, custom-made clarinet mouth piece. It was digitized with Micro CT scan, and later 3D printed to replicate uniqueness.
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <p class="desc-title">Finch Bird Skull</p>
-              <div class="desc-wrapper">
-                <div class="desc-img"> <img src="img/img_prints/birdSkull.jpg" alt="Item 1" class="img-responsive"></div>
-                <p class="desc-text">The results from a project involving the digitization of a finch skull, using Micro CT scan, then 3D printed at an increased scale, to allow for testing of acoustical resonance of internal structure. Object photographed by Gary Motz (Department of Geological Sciences).
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <p class="desc-title">Finch Bird Skull</p>
-              <div class="desc-wrapper">
-                <div class="desc-img"> <img src="img/img_objects/birdSkull.jpg" alt="Item 1" class="img-responsive"></div>
-                <p class="desc-text">The results from a project involving the digitization of a finch skull, using Micro CT scan, then 3D printed at an increased scale, to allow for testing of acoustical resonance of internal structure. Object photographed by Gary Motz (Department of Geological Sciences).
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <p class="desc-title">Nuclear Pasta Model</p>
-              <div class="desc-wrapper">
-                <div class="desc-img"> <img src="img/img_prints/nuclearPasta.jpg" alt="Item 1" class="img-responsive"></div>
-                <p class="desc-text">Physics simulation. 3D printed to showcase results, and for further study and analysis.
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <p class="desc-title">Architechtural Model</p>
-              <div class="desc-wrapper">
-                <div class="desc-img"> <img src="img/img_prints/architechturalModel.jpg" alt="Item 1" class="img-responsive"></div>
-                <p class="desc-text">Architechtural model 3D printed as a color-print demo piece.
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <p class="desc-title">Cancer Cell Model</p>
-              <div class="desc-wrapper">
-                <div class="desc-img"> <img src="img/img_prints/cancerCell2.jpg" alt="Item 1" class="img-responsive"></div>
-                <p class="desc-text">Randy Heiland lead supercomputing simulation. 3D printed to showcase results, and for further study and analysis.
-                </p>
-              </div>
-            </div>
-
-            <span class="loading"></span>
-            <span class="icon close-content"></span>
+            <!--end grid & descriptions-->
           </div>
-          <!--end portfolio grid -->
+          <!--end col -->
         </div>
-        <!--end col -->
+        <!--end row -->
       </div>
-      <!--end row -->
-    </div>
-    <!-- end container-->
+      <!-- end container-->
   </section>
 
-
-
-
-
-  <!--
-    <footer>
-      <div class="container">
-        <div class="row">
-
-          <div class="col-md-4 column">
-            <h4>AcasA Programming</h4>
-            <p>A tutorial by <a href="http://acasaprogramming.ro">AcasA Programming</a></p>
-            <ul class="social-icons list-inline">
-              <li><a href="https://www.youtube.com/channel/UCBGItdbB-5Yma5X6FK_hYBA" class="youtube"><span class="fa fa-youtube"></span></a></li>
-              <li><a href="https://www.facebook.com/acasaprogramming" class="facebook"><span class="fa fa fa-facebook"></span></a></li>
-              <li><a href="https://github.com/acasaprogramming" class="github"><span class="fa fa-github"></span></a></li>
-            </ul>
-
-          </div>
-
-
-          <div class="col-md-4 column">
-            <h4>Credits</h4>
-            <ul class="list-unstyled">
-              <li><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><a href="https://getbootstrap.com/">Bootstrap 3</a></li>
-              <li><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><a href="https://vestride.github.io/Shuffle/">Shuffle.js</a></li>
-              <li><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><a href="http://benalman.com/projects/jquery-throttle-debounce-plugin/" target="_blank">jQuery throttle / debounce</a></li>
-            </ul>
-          </div>
-
-          <div class="col-md-4 column">
-            <h4>Images by:</h4>
-            <ul class="list-unstyled">
-              <li><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><a href="http://lorempixel.com/">Lorempixel</a></li>
-              <li><span class=" glyphicon glyphicon-chevron-right" aria-hidden="true"></span><a href="http://lorempicsum.com/">Lorempicsum</a></li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-    </footer>
--->
-
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="js/sort_shuffle.js"><{{!}}/script>
+  <script src = "js/classie.js"><{{!}}/script>
+  <script src = "js/helper.js"><{{!}}/script>
+  <script src = "js/grid3d.js"><{{!}}/script>
+  <script>
+      new grid3D(document.getElementById('grid3d'));
+  <{{!}}/script>
+</script>
+<!--  <script src ="js/modernizr.custom.js"></script>-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!--  <script src="js/handlebars-v4.0.5.js"></script>-->
-<!--  <script src="js/data.js"></script>-->
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="js/bootstrap.min.js"></script>
   <script src="js/jquery.shuffle.min.js"></script>
-  <script src="js/custom.js"></script>
-  <script src="js/classie.js"></script>
-  <script src="js/helper.js"></script>
-  <script src="js/grid3d.js"></script>
-
+  <script src="js/shuffle.min.js"></script>
+  <script src="js/handlebars-v4.0.5.js"></script>
+  <script src="js/data.js"></script>
   <script>
-    new grid3D(document.getElementById('grid3d'));
+    //HandleBar Template
+console.log(data);
+    var source = $("#grid_template").html();
+//    console.log(source);
+    var template = Handlebars.compile(source);
+    var compiledHTML = template(data);
+    $('.content-placeholder').html(compiledHTML);
   </script>
 </body>
-
 </html>

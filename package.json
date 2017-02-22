@@ -1,0 +1,15 @@
+{
+  "name": "avl_3d_grid",
+  "version": "1.0.0",
+  "description": "grid sort",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.iu.edu/pdbeard/avl_3d_grid.git"
+  },
+  "author": "",
+  "license": "ISC"
+}
